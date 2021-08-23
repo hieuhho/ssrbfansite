@@ -8,15 +8,21 @@
   font-size: 1.2rem;
 }
 
+a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .milestone-logo {
   max-height: 80px;
+  margin: auto;
   margin-right: 10px;
 }
 
 .navbar-logo {
   color: #fff;
   justify-self: start;
-  /* margin-left: 20px; */
   cursor: pointer;
   text-decoration: none;
   font-size: 2rem;

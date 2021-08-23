@@ -31,12 +31,18 @@ function Navbar() {
   return (
     <>
       <nav className="navbar">
-        <img className="milestone-logo" src={milestone} alt="milestone-logo" />
+        <Link to="/" onClick={closeMobileMenu} >
+          <img className="milestone-logo" src={milestone} alt="milestone-logo" />
+          <div className="navbar-logo" >
+            Shishiro Botan Fansite
+            <i class="fas fa-leaf" />
+          </div>
+        </Link>
         {/* <img className="logo" src={logo} alt="logo" /> */}
-        <Link to="/" className="navbar-logo" onClick={closeMobileMenu} >
+        {/* <Link to="/" className="navbar-logo" onClick={closeMobileMenu} >
           Shishiro Botan Fansite
           <i class="fas fa-leaf" />
-        </Link>
+        </Link> */}
         <div className="menu-icon" onClick={handleClick}>
           <i className={click ? "fas fa-times" : "fas fa-bars"} />
         </div>
@@ -47,43 +53,24 @@ function Navbar() {
             </Link>
           </li>
           <li className="nav-item">
-            <Link
-              to="/videos"
-              className="nav-links"
-              onClick={closeMobileMenu}
-            >
+            <Link to="/videos" className="nav-links" onClick={closeMobileMenu}>
               Videos
             </Link>
           </li>
-          <li
-            className="nav-item"
-            onMouseEnter={onMouseEnter}
-            onMouseLeave={onMouseLeave}
-          >
-            <Link
-              to="/projects"
-              className="nav-links"
-              onClick={closeMobileMenu}
-            >
-              Projects <i className="fas fa-caret-down" />
+          <li className="nav-item" onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
+            <Link to="/projects" className="nav-links" onClick={closeMobileMenu}>
+              Projects
+              <i className="fas fa-caret-down" />
             </Link>
             {dropdown && <Dropdown />}
           </li>
           <li className="nav-item">
-            <Link
-              to="/fanarts"
-              className="nav-links"
-              onClick={closeMobileMenu}
-            >
+            <Link to="/fanarts" className="nav-links" onClick={closeMobileMenu}>
               Fanarts
             </Link>
           </li>
           <li className="nav-item">
-            <Link
-              to="/about"
-              className="nav-links"
-              onClick={closeMobileMenu}
-            >
+            <Link to="/about" className="nav-links" onClick={closeMobileMenu}>
               About
             </Link>
           </li>
