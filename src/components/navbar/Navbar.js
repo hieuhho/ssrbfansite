@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
+import milestone from '../../images/milestone.svg'
+import logo from '../../images/logo.svg'
 import Dropdown from "./Dropdown";
 
 function Navbar() {
@@ -29,9 +31,10 @@ function Navbar() {
   return (
     <>
       <nav className="navbar">
-        <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
-          {/* <img src={require("../../images/logo.png")} alt="logo" /> */}
-          Shishiro Botan
+        <img className="milestone" src={milestone} alt="milestone" />
+        {/* <img className="logo" src={logo} alt="logo" /> */}
+        <Link to="/" className="navbar-logo" onClick={closeMobileMenu} >
+          Shishiro Botan Fansite
           <i class="fas fa-leaf" />
         </Link>
         <div className="menu-icon" onClick={handleClick}>

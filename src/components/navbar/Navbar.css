@@ -1,5 +1,6 @@
 .navbar {
-  background: linear-gradient(90deg, rgb(28, 27, 27) 0%, rgb(26, 23, 23) 100%);
+  /* background: linear-gradient(90deg, rgb(28, 27, 27) 0%, rgb(26, 23, 23) 100%); */
+  background: black;
   height: 80px;
   display: flex;
   justify-content: center;
@@ -7,10 +8,15 @@
   font-size: 1.2rem;
 }
 
+.milestone {
+  max-height: 80px;
+  margin-right: 10px;
+}
+
 .navbar-logo {
   color: #fff;
   justify-self: start;
-  margin-left: 20px;
+  /* margin-left: 20px; */
   cursor: pointer;
   text-decoration: none;
   font-size: 2rem;
@@ -19,6 +25,7 @@
 .fa-leaf {
   margin-left: 0.5rem;
   font-size: 1.6rem;
+  color: greenyellow;
 }
 
 .nav-menu {
@@ -27,7 +34,7 @@
   grid-gap: 10px;
   list-style: none;
   text-align: center;
-  width: 70vw;
+  width: 60vw;
   justify-content: end;
   margin-right: 2rem;
 }
@@ -62,7 +69,7 @@
   display: none;
 }
 
-@media screen and (max-width: 960px) {
+@media screen and (max-width: 1190px) {
   .NavbarItems {
     position: relative;
   }
@@ -140,7 +147,7 @@
     transition: 250ms;
   }
 
-  button {
+  .milestone {
     display: none;
   }
 }
