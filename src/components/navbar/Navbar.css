@@ -8,7 +8,7 @@
   font-size: 1.2rem;
 }
 
-.milestone {
+.milestone-logo {
   max-height: 80px;
   margin-right: 10px;
 }
@@ -147,7 +147,7 @@
     transition: 250ms;
   }
 
-  .milestone {
+  .milestone-logo {
     display: none;
   }
 }

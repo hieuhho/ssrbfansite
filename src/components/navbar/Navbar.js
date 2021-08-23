@@ -31,7 +31,7 @@ function Navbar() {
   return (
     <>
       <nav className="navbar">
-        <img className="milestone" src={milestone} alt="milestone" />
+        <img className="milestone-logo" src={milestone} alt="milestone-logo" />
         {/* <img className="logo" src={logo} alt="logo" /> */}
         <Link to="/" className="navbar-logo" onClick={closeMobileMenu} >
           Shishiro Botan Fansite
