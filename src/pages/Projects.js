@@ -12,11 +12,15 @@ const Projects = () => {
         {MenuItems.map((item, index) => {
           return (
               <Link
-                className="col"
+                className="project_col"
                 to={item.path}
                 onClick={() => setClick(false)}
-              >
-                {item.title}
+                style={{
+                  backgroundImage:'url("' + item.img + '")',
+                }}
+                data-text={item.desc}
+                >
+                <div className="project_title">{item.title}</div>
               </Link>
           );
         })}

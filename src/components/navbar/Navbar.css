@@ -8,23 +8,15 @@
   font-size: 1.2rem;
 }
 
-a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 
 .milestone-logo {
+  display: flex;
   max-height: 80px;
-  margin: auto;
-  margin-right: 10px;
 }
 
-.navbar-logo {
-  color: #fff;
+.navbar-text {
   justify-self: start;
-  cursor: pointer;
-  text-decoration: none;
+  color: #fff;
   font-size: 2rem;
 }
 
@@ -59,6 +51,7 @@ a {
 
 .nav-links:hover {
   background-color: #434744;
+  background-color: #af9fa9;
   border-radius: 4px;
   transition: all 0.2s ease-out;
 }

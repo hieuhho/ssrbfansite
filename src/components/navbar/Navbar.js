@@ -33,16 +33,11 @@ function Navbar() {
       <nav className="navbar">
         <Link to="/" onClick={closeMobileMenu} >
           <img className="milestone-logo" src={milestone} alt="milestone-logo" />
-          <div className="navbar-logo" >
-            Shishiro Botan Fansite
-            <i class="fas fa-leaf" />
-          </div>
         </Link>
-        {/* <img className="logo" src={logo} alt="logo" /> */}
-        {/* <Link to="/" className="navbar-logo" onClick={closeMobileMenu} >
+        <Link to="/" className="navbar-text" onClick={closeMobileMenu} >
           Shishiro Botan Fansite
           <i class="fas fa-leaf" />
-        </Link> */}
+        </Link>
         <div className="menu-icon" onClick={handleClick}>
           <i className={click ? "fas fa-times" : "fas fa-bars"} />
         </div>
