@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/ssrbfansite/static/css/main.03029633.chunk.css",
+    "main.js": "/ssrbfansite/static/js/main.810cf3e2.chunk.js",
+    "main.js.map": "/ssrbfansite/static/js/main.810cf3e2.chunk.js.map",
+    "runtime-main.js": "/ssrbfansite/static/js/runtime-main.0dc71763.js",
+    "runtime-main.js.map": "/ssrbfansite/static/js/runtime-main.0dc71763.js.map",
+    "static/js/2.341aafed.chunk.js": "/ssrbfansite/static/js/2.341aafed.chunk.js",
+    "static/js/2.341aafed.chunk.js.map": "/ssrbfansite/static/js/2.341aafed.chunk.js.map",
+    "index.html": "/ssrbfansite/index.html",
+    "static/css/main.03029633.chunk.css.map": "/ssrbfansite/static/css/main.03029633.chunk.css.map",
+    "static/js/2.341aafed.chunk.js.LICENSE.txt": "/ssrbfansite/static/js/2.341aafed.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/ssrbfansite/static/media/bg.c51f20e5.png",
+    "static/media/logo.3e48bdd4.svg": "/ssrbfansite/static/media/logo.3e48bdd4.svg",
+    "static/media/milestone.57887365.svg": "/ssrbfansite/static/media/milestone.57887365.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.0dc71763.js",
+    "static/js/2.341aafed.chunk.js",
+    "static/css/main.03029633.chunk.css",
+    "static/js/main.810cf3e2.chunk.js"
+  ]
+}
