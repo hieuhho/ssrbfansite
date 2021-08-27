@@ -32,7 +32,7 @@ function Navbar() {
     <>
       <nav className="navbar">
         <Link to="/" onClick={closeMobileMenu} >
-          <img className="milestone-logo" src={milestone} alt="milestone-logo" />
+          <img className="milestone-logo" src={logo} alt="milestone-logo" />
         </Link>
         <Link to="/" className="navbar-text" onClick={closeMobileMenu} >
           Shishiro Botan Fansite
@@ -42,22 +42,22 @@ function Navbar() {
           <i className={click ? "fas fa-times" : "fas fa-bars"} />
         </div>
         <ul className={click ? "nav-menu active" : "nav-menu"}>
+          <li className="nav-item" onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
+            <Link to="/projects" className="nav-links" onClick={closeMobileMenu}>
+              Projects {' '}
+              <i className="fas fa-caret-down" />
+            </Link>
+            {dropdown && <Dropdown />}
+          </li>
           <li className="nav-item">
             <Link to="/activity" className="nav-links" onClick={closeMobileMenu}>
-              Botan's Activity History
+              Timeline
             </Link>
           </li>
           <li className="nav-item">
             <Link to="/videos" className="nav-links" onClick={closeMobileMenu}>
               Videos
             </Link>
-          </li>
-          <li className="nav-item" onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
-            <Link to="/projects" className="nav-links" onClick={closeMobileMenu}>
-              Projects
-              <i className="fas fa-caret-down" />
-            </Link>
-            {dropdown && <Dropdown />}
           </li>
           <li className="nav-item">
             <Link to="/fanarts" className="nav-links" onClick={closeMobileMenu}>
