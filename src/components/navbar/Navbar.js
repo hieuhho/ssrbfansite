@@ -36,7 +36,7 @@ function Navbar() {
         </Link>
         <Link to="/" className="navbar-text" onClick={closeMobileMenu} >
           Shishiro Botan Fansite
-          <i class="fas fa-leaf" />
+          <i className="fas fa-leaf" />
         </Link>
         <div className="menu-icon" onClick={handleClick}>
           <i className={click ? "fas fa-times" : "fas fa-bars"} />
@@ -67,6 +67,11 @@ function Navbar() {
           <li className="nav-item">
             <Link to="/about" className="nav-links" onClick={closeMobileMenu}>
               About
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link to="/population" className="nav-links" onClick={closeMobileMenu}>
+              Population
             </Link>
           </li>
         </ul>
