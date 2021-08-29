@@ -5,7 +5,6 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  color: #fff;
   text-decoration: none;
 }
 
@@ -44,12 +43,13 @@
   background-position: inherit;
   background-size: cover;
   background-repeat: no-repeat;
-  color: #fff;
   text-shadow: 2px 2px black;
   font-size: 100px;
 }
 
 .anniversary_anchor {
+  color: #fff;
+  height: 30%;
   margin-top: 80px;
   padding-top: 20px;
 }
@@ -228,17 +228,3 @@ iframe {
   background-color: rgba(7, 205, 255, 0.6);
 }
 
-.country_wrapper {
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-  font-size: 3vh;
-  list-style:armenian;
-  margin: 0;
-  padding: 0;
-}
-
-.country_data {
-  padding: 15px;
-  display: inline-block;
-}

@@ -1,5 +1,7 @@
 import React, {useState} from 'react';
 import { WorldMap } from "react-svg-worldmap"
+import Modal from '../Modal';
+
 
 const data =
 [
@@ -49,11 +51,9 @@ const stylingFunction = (context : any) => {
 function Population() {
   const [state, setState] = useState({
     cName: 'Select Country',
-    iso: '',
     val: '',
-    pre: '',
-    suff: '',
   });
+  const [show, setShow] = useState(false);
 
   const clickAction = (
     event: React.MouseEvent<SVGElement, MouseEvent>,
@@ -61,23 +61,20 @@ function Population() {
     isoCode: string,
     value: string,
   ) => {
+    setShow(true)
     const numberValue = parseInt(value, 10);
     const fNumber = formattedNumber(numberValue, 2);
     setState({
       cName: countryName,
-      iso: isoCode,
       val: fNumber,
-      pre: '',
-      suff: '',
     });
   };
   return (
     <div className="map" >
        <WorldMap color="red" value-suffix="ssrb" size="responsive" strokeOpacity="0.2" backgroundColor="transparent" frame="true" frameColor="transparent" styleFunction={stylingFunction} onClickFunction={clickAction} data={data} />
-        <ul className="country_wrapper">
-          <li className="country_data">Country: {state.cName}</li>
-          <li className="country_data">Fans: {state.val}</li>
-        </ul>
+       <Modal title={`${state.val} SSRBmins from ${state.cName}`} onClose={() => setShow(false)} show={show}>
+        <p>tweets go here</p>
+      </Modal>
     </div>
   )
 }
