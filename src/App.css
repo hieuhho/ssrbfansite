@@ -30,7 +30,6 @@
   color: #fff;
   text-shadow: 2px 2px black;
   font-size: 100px;
-  z-index: 9999;
 }
 
 .anniversary {
@@ -208,7 +207,7 @@ iframe {
   height: 100%;
 } */
 
-.map p {
+/* .map p {
   align-items: center;
   justify-content: center;
   width: 60%;
@@ -228,3 +227,54 @@ iframe {
   background-color: rgba(7, 205, 255, 0.6);
 }
 
+ */
+
+ .jvectormap-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  touch-action: none;
+  z-index: 2;
+}
+
+.jvectormap-tip {
+  position: absolute;
+  display: none;
+  border: solid 1px #CDCDCD;
+  border-radius: 3px;
+  background: #292929;
+  color: white;
+  font-family: sans-serif, Verdana;
+  font-size: smaller;
+  padding: 3px;
+  z-index: 3;
+}
+
+ .jvectormap-zoomin, .jvectormap-zoomout {
+  position: absolute;
+  right: 50px;
+  top: 50px;
+  border-radius: 3px;
+  background: #292929;
+  padding: 3px;
+  color: white;
+  cursor: pointer;
+  line-height: 10px;
+  text-align: center;
+  box-sizing: content-box;
+  font-size: x-small;
+}
+
+.jvectormap-zoomin, .jvectormap-zoomout {
+  width: 10px;
+  height: 10px;
+}
+
+.jvectormap-zoomin {
+  top: 10px;
+}
+
+.jvectormap-zoomout {
+  top: 30px;
+}

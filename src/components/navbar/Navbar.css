@@ -6,13 +6,13 @@
   justify-content: center;
   align-items: center;
   font-size: 1.2rem;
-  position: fixed;
+  position: absolute;
   width: 100%;
-  z-index: 1;
+  z-index: 9999;
 }
 
 
-.milestone-logo {
+.logo {
   display: flex;
   max-height: 80px;
 }
@@ -149,7 +149,7 @@
     transition: 250ms;
   }
 
-  .milestone-logo {
+  .logo {
     display: none;
   }
 }

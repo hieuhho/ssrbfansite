@@ -1,23 +1,28 @@
 import React, {useState} from 'react';
-import { WorldMap } from "react-svg-worldmap"
+import { VectorMap } from "react-jvectormap"
+
 import Modal from '../Modal';
+const { overwrite, getName } = require("country-list");
+overwrite([{
+  code: 'TW',
+  name: 'Taiwan'
+}])
 
+const mapData = {
+  "CN": 213451451,
+  "ID": 213451451,
+  "IN": 1311559204,
+  "US": 331883986,
+  "PK": 210797836,
+  "BR": 210301591,
+  "NG": 208679114,
+  "BD": 161062905,
+  "RU": 141944641,
+  "MX": 127318112,
+  "HK": 1389618778,
+  "TW": 1389618778
+};
 
-const data =
-[
-  { country: "id", value: 213451451 }, // china
-  { country: "in", value: 1311559204 }, // india
-  { country: "us", value: 331883986 },  // united states
-  { country: "id", value: 264935824 },  // indonesia
-  { country: "pk", value: 210797836 },  // pakistan
-  { country: "br", value: 210301591 },  // brazil
-  { country: "ng", value: 208679114 },  // nigeria
-  { country: "bd", value: 161062905 },  // bangladesh
-  { country: "ru", value: 141944641 },  // russia
-  { country: "mx", value: 127318112 },   // mexico
-  { country: "hk", value: 1389618778 },   // hong kong
-  { country: "tw", value: 1389618778 }   // taiwan
-]
 
 const formattedNumber = (num: number, digits: number) => {
   const si = [
@@ -36,47 +41,71 @@ const formattedNumber = (num: number, digits: number) => {
   }
 };
 
-const stylingFunction = (context : any) => {
-  const opacityLevel = 0.2 + (1.5 * (context.countryValue - context.minValue) / (context.maxValue - context.minValue))
-  return {
-      fill: context.color,
-      fillOpacity: opacityLevel,
-      stroke: "black",
-      strokeWidth: 1,
-      strokeOpacity: 0.5,
-      cursor: "pointer"
-  }
-}
-
-function Population() {
-  const [state, setState] = useState({
+const Population = () => {
+  const [country, setCountry] = useState({
     cName: 'Select Country',
-    val: '',
+    fans: '',
   });
   const [show, setShow] = useState(false);
 
-  const clickAction = (
-    event: React.MouseEvent<SVGElement, MouseEvent>,
-    countryName: string,
-    isoCode: string,
-    value: string,
-  ) => {
-    setShow(true)
-    const numberValue = parseInt(value, 10);
-    const fNumber = formattedNumber(numberValue, 2);
-    setState({
-      cName: countryName,
-      val: fNumber,
-    });
+  const handleHover = (e, el, countryCode) => {
+    const fans = mapData[countryCode] ? mapData[countryCode] : 0
+    if (fans !== 0) {
+      el.html(el.html()+' ('+fans+' SSRBmins)');
+    }
+  }
+  const handleClick = (e, countryCode) => {
+    const cName = getName(countryCode)
+    const fanNums = parseInt(mapData[countryCode] ? mapData[countryCode] : 0, 10)
+    const formattedFans = formattedNumber(fanNums, 2);
+    if (fanNums !== 0) {
+      setShow(true)
+      setCountry({
+        cName: cName,
+        fans: formattedFans,
+      });
+    }
+    document.querySelectorAll(".jvectormap-tip").forEach(el => el.remove());
   };
-  return (
-    <div className="map" >
-       <WorldMap color="red" value-suffix="ssrb" size="responsive" strokeOpacity="0.2" backgroundColor="transparent" frame="true" frameColor="transparent" styleFunction={stylingFunction} onClickFunction={clickAction} data={data} />
-       <Modal title={`${state.val} SSRBmins from ${state.cName}`} onClose={() => setShow(false)} show={show}>
-        <p>tweets go here</p>
-      </Modal>
-    </div>
-  )
-}
 
-export default Population
+  return (
+    <div className="map">
+      <Modal title={`${country.fans} SSRBmins from ${country.cName}`} onClose={() => setShow(false)} show={show}></Modal>
+      <VectorMap
+        map={"world_mill"}
+        backgroundColor="#0077be"
+        containerStyle={{
+          width: "65%",
+          height: "520px"
+        }}
+        onRegionTipShow={handleHover}
+        onRegionClick={handleClick}
+        containerClassName="map"
+        regionStyle={{
+          initial: {
+            fill: "#e4e4e4",
+            "fill-opacity": 0.9,
+            stroke: "none",
+            "stroke-width": 0,
+            "stroke-opacity": 0
+          },
+          hover: {
+            "fill-opacity": 0.8,
+            cursor: "pointer"
+          }
+        }}
+        regionsSelectable={false}
+        series={{
+          regions: [
+            {
+              values: mapData,
+              scale: ['#ffeda0', '#f03b20'],
+              normalizeFunction: "polynomial"
+            }
+          ]
+        }}
+      />
+    </div>
+  );
+};
+export default Population;
