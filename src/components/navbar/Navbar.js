@@ -48,11 +48,11 @@ function Navbar() {
             </Link>
             {dropdown && <Dropdown />}
           </li>
-          <li className="nav-item">
+          {/* <li className="nav-item">
             <Link to="/activity" className="nav-links" onClick={closeMobileMenu}>
               Timeline
             </Link>
-          </li>
+          </li> */}
           <li className="nav-item">
             <Link to="/videos" className="nav-links" onClick={closeMobileMenu}>
               Videos
@@ -68,11 +68,11 @@ function Navbar() {
               About
             </Link>
           </li>
-          <li className="nav-item">
+          {/* <li className="nav-item">
             <Link to="/population" className="nav-links" onClick={closeMobileMenu}>
               Population
             </Link>
-          </li>
+          </li> */}
         </ul>
       </nav>
     </>

@@ -13,7 +13,7 @@ import Taiwan from "./pages/Taiwan"
 import English from "./pages/English"
 import Fanarts from "./pages/Fanarts"
 import About from "./pages/About"
-import Population from "./pages/Population"
+// import Population from "./pages/Population"
 
 
 function App() {
@@ -32,7 +32,7 @@ function App() {
           <Route path="/daipan" component={English} />
           <Route path="/fanarts" component={Fanarts} />
           <Route path="/about" component={About} />
-          <Route path="/population" component={Population} />
+          {/* <Route path="/population" component={Population} /> */}
         </Switch>
     </Router>
   );
