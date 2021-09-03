@@ -4,7 +4,8 @@
 	--black: #1f1f1f;
 	--gray-100: #303030;
 	--gray-200: #3d3d3d;
-	--gold: #d1b487;
+	--bronze: #d1b487;
+	--gold: #e0c673;
 }
 
 body {
@@ -173,7 +174,7 @@ a {
 
 .welcome-text {
 	color: var(--black);
-	background: #d1b487;
+	background: var(--gold);
 	padding: 1rem;
 	width: 100%;
 }
