@@ -22,16 +22,16 @@ function Navbar() {
 
 			{/* Nav Links */}
 			<ul className={dropdown ? "nav-menu nav-menu__active" : "nav-menu"}>
-				<li className="nav-item">
+				<li className="nav-item" onClick={toggleDropdown}>
 					<Link to="/projects">Projects</Link>
 				</li>
-				<li className="nav-item">
+				<li className="nav-item" onClick={toggleDropdown}>
 					<Link to="/videos">Videos</Link>
 				</li>
-				<li className="nav-item">
+				<li className="nav-item" onClick={toggleDropdown}>
 					<Link to="/fanarts">Fanarts</Link>
 				</li>
-				<li className="nav-item">
+				<li className="nav-item" onClick={toggleDropdown}>
 					<Link to="/about">About</Link>
 				</li>
 			</ul>
