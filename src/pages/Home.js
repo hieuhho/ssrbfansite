@@ -7,10 +7,7 @@ const Home = () => {
 			<div className="welcome-text">
 				<h2>Welcome!</h2>
 				<p>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris luctus
-					ipsum et finibus faucibus. Phasellus eu sodales elit. Pellentesque sed
-					porttitor lectus. Proin et nisl elementum, cursus nisl at, feugiat
-					lacus.
+				Shishiro Botan is a Virtual YouTuber under Hololive Production, a popular VTuber agency from Japan. She was introduced as one of the members from 5th Generation of Hololive Vtubers on 6 August 2020. Her Twitter account was created in April 2020, she made her first tweet on 6 August, and her YouTube channel was created on 12 April.
 				</p>
 			</div>
 			<div className="botan-img-container">

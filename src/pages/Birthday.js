@@ -60,6 +60,7 @@ const Birthday = () => {
 		fans: "",
 	});
 	const [show, setShow] = useState(false);
+	const [tip, setTip] = useState(false)
 
 	const handleHover = (e, el, countryCode) => {
 		const fans = mapData[countryCode] ? mapData[countryCode] : 0;
@@ -67,6 +68,7 @@ const Birthday = () => {
 			el.html(el.html() + " (" + fans + " SSRBmins)");
 		}
 	};
+
 	const handleClick = (e, countryCode) => {
 		const cName = getName(countryCode);
 		const fanNums = parseInt(
@@ -86,6 +88,15 @@ const Birthday = () => {
 
 	return (
 		<main className="map">
+			<button onClick={() => setTip('true')}>
+			Tweet your SSRB
+			</button>
+			<Modal
+				title='Instructions'
+				children='Tweet this #SSRBWOrld'
+				onClose={() => setTip(false)}
+				show={tip}
+			></Modal>
 			<Modal
 				title={`${country.fans} SSRBmins from ${country.cName}`}
 				onClose={() => setShow(false)}

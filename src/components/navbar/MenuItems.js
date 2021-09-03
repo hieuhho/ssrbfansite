@@ -2,21 +2,21 @@
   {
     title: "Anniversary",
     img: "https://i.picsum.photos/id/230/400/900.jpg?hmac=AQI-uciC8LquKEeNWdA4W_SQkDjIIQmwfYb9HzFL7PU",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    desc: "Make your own SSRBmin",
     path: "/anniversary",
     cName: "dropdown-link"
   },
   {
     title: "Birthday (SSRBWorld)",
     img: "https://i.picsum.photos/id/1039/400/900.jpg?hmac=K-7d_oihjW6jwBn8olpAFfhet_ISlyoTjh3sRVcSQDA",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id lectus metus. Aliquam tempor vehicula aliquet.",
+    desc: "Tweet your SSRB around the world",
     path: "/birthday",
     cName: "dropdown-link"
   },
   {
     title: "1M Milestone",
     img: "https://i.picsum.photos/id/313/400/900.jpg?hmac=fVxZssWtwwnIp6Vs1iVfRxpsBXsk4eixcr18ncvwwY8",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris luctus ipsum et finibus faucibus. Phasellus eu sodales elit. Pellentesque sed porttitor lectus. Proin et nisl elementum, cursus nisl at, feugiat lacus.",
+    desc: "Under Constuction",
     path: "/milestone",
     cName: "dropdown-link"
   },

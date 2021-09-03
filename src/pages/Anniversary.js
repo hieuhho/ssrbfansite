@@ -3,7 +3,7 @@ import React from "react";
 const Anniversary = () => {
 	return (
 		<main>
-			<div className="anniversary">
+				<h1 className="anniversary">Anniversary</h1>
 				<a
 					className="anniversary_anchor"
 					href="https://nepolabo.fans/botan/menu"
@@ -13,7 +13,6 @@ const Anniversary = () => {
 					Anniversary
 					<i className="fas fa-external-link-square-alt"> </i>
 				</a>
-			</div>
 			<iframe
 				title="botan anniversary"
 				src="https://nepolabo.fans/botan/menu"
