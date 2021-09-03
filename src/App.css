@@ -1,11 +1,15 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital@0;1&family=Staatliches&display=swap");
 
 :root {
 	--black: #1f1f1f;
+	--gray-100: #303030;
+	--gray-200: #3d3d3d;
+	--gold: #d1b487;
 }
 
 body {
-	font-family: "Poppins", sans-serif;
+	font-family: "Lato", sans-serif;
+	background-color: var(--gray-200);
 	color: #fff;
 	overflow-x: hidden;
 }
@@ -16,17 +20,62 @@ body {
 	box-sizing: border-box;
 }
 
+h1,
+h2 {
+	font-family: "Staatliches", cursive;
+}
+
 p {
 	line-height: 1.6;
 }
 
 main {
-	background-image: url("./images/bg.png");
-	background-position: center;
-	background-size: cover;
-	background-repeat: no-repeat;
+	background: var(--gray-200);
 	min-height: calc(100vh - 6rem);
-	margin: 0;
+	max-width: 1440px;
+	margin: 0 auto;
+	position: relative;
+	background-image: linear-gradient(
+		45deg,
+		var(--gray-200) 25%,
+		var(--gray-100) 25%,
+		var(--gray-100) 50%,
+		var(--gray-200) 50%,
+		var(--gray-200) 75%,
+		var(--gray-100) 75%,
+		var(--gray-100) 100%
+	);
+	background-size: 56.57px 56.57px;
+}
+
+main::before,
+main::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	width: 3rem;
+	height: 100%;
+	background-image: linear-gradient(
+		90deg,
+		#ffffff 20%,
+		transparent 20%,
+		transparent 40%,
+		#ffffff 40%,
+		#ffffff 60%,
+		transparent 60%,
+		transparent 80%,
+		#ffffff 80%,
+		#ffffff 100%
+	);
+	background-size: 100% 100%;
+}
+
+main::before {
+	left: -3rem;
+}
+
+main::after {
+	right: -3rem;
 }
 
 main h1 {
@@ -73,28 +122,56 @@ a {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+	isolation: isolate;
+}
+
+.welcome-header {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+	padding: 0 2rem;
 }
 
 .botan-img-container {
 	display: flex;
 	justify-content: center;
+	position: relative;
 }
 
 .botan-img {
 	object-fit: contain;
+	width: 100%;
+}
+
+.welcome-text-wrapper {
+	margin: auto;
+	width: clamp(35ch, 100%, 55ch);
+}
+
+.welcome-text-wrapper::before,
+.welcome-text-wrapper::after {
+	content: "";
+	height: 20px;
+	width: 100%;
+	background-color: var(--gold);
+	display: block;
+}
+
+.welcome-text-wrapper::before {
+	clip-path: polygon(0 0, 0% 100%, 100% 100%);
+}
+.welcome-text-wrapper::after {
+	clip-path: polygon(100% 0, 0 0, 100% 100%);
 }
 
 .welcome-text {
-	border: 0.1rem solid #fff;
-	border-radius: 0.5rem;
-	color: #20361e;
-	background: rgba(255, 255, 255, 0.6);
-	width: 100%;
-	min-width: 35ch;
-	max-width: 55ch;
-	margin: 3rem auto 0 auto;
+	color: var(--black);
+	background: #d1b487;
 	padding: 1rem;
-	backdrop-filter: blur(1rem);
+	width: 100%;
 }
 
 .welcome-text h2 {
@@ -116,9 +193,8 @@ a {
 	}
 	.botan-img-container {
 		justify-content: right;
-		transform: translate(3rem, -2rem);
 	}
-	.welcome-text {
+	.welcome-text-wrapper {
 		margin: auto 2rem auto 0;
 	}
 }
