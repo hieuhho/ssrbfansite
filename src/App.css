@@ -41,6 +41,92 @@ a {
 	color: #fff;
 }
 
+@media screen and (max-width: 960px) {
+	main {
+		padding: 0 0.5rem;
+	}
+}
+
+/* scrollbar */
+
+::-webkit-scrollbar {
+	width: 10px;
+}
+
+::-webkit-scrollbar-track {
+	background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+	background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: #555;
+}
+
+/* 
+	Home Page
+*/
+
+#home {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.botan-img-container {
+	display: flex;
+	justify-content: center;
+}
+
+.botan-img {
+	object-fit: contain;
+}
+
+.welcome-text {
+	border: 0.1rem solid #fff;
+	border-radius: 0.5rem;
+	color: #20361e;
+	background: rgba(255, 255, 255, 0.6);
+	width: 100%;
+	min-width: 35ch;
+	max-width: 55ch;
+	margin: 3rem auto 0 auto;
+	padding: 1rem;
+	backdrop-filter: blur(1rem);
+}
+
+.welcome-text h2 {
+	font-size: 2rem;
+	font-weight: 600;
+	margin-top: 0;
+	margin-bottom: 0.25em;
+}
+
+.welcome-text p {
+	margin: 0;
+	font-size: 1.4rem;
+}
+
+@media screen and (min-width: 960px) {
+	#home {
+		max-height: calc(100vh - 6rem);
+		flex-direction: row-reverse;
+	}
+	.botan-img-container {
+		justify-content: right;
+		transform: translate(3rem, -2rem);
+	}
+	.welcome-text {
+		margin: auto 2rem auto 0;
+	}
+}
+
+/* 
+	Anniversary Page 
+*/
+
 .anniversary {
 	display: flex;
 	height: 100vh;
@@ -75,6 +161,10 @@ iframe {
 	top: 25%;
 	left: 25%;
 }
+
+/* 
+	Projects Page 
+*/
 
 #projects {
 	display: grid;
@@ -126,50 +216,6 @@ iframe {
 
 .project:hover .project-desc {
 	transform: translateY(0);
-}
-
-.botan_img {
-	animation: botan_img 2s cubic-bezier(0.39, -1.05, 0.58, 1.95);
-	transform-origin: center bottom;
-	position: absolute;
-	bottom: 0;
-	z-index: 1;
-	max-height: 91.5vh;
-}
-
-@keyframes botan_img {
-	0% {
-		opacity: 0;
-		transform: scale3d(0.75, 0.75, 1);
-	}
-
-	40% {
-		opacity: 0;
-		transform: scale3d(0.75, 0.75, 1);
-	}
-
-	100% {
-		opacity: 1;
-		transform: scale3d(1, 1, 1);
-	}
-}
-
-.botan_info {
-	display: flex;
-	flex: 1;
-	margin: 0 auto;
-	border: 1px solid #fff;
-	border-radius: 10px;
-	color: white;
-	background: tomato;
-	background: rgba(255, 255, 255, 0.5);
-	align-items: center;
-	justify-content: center;
-	transition: all 0.3s ease-out;
-	font-size: 30px;
-	max-width: 40%;
-	animation: botan_img 3s cubic-bezier(0.39, -1.05, 0.58, 1.95);
-	transform-origin: center bottom;
 }
 
 /* .map {
