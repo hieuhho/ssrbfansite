@@ -163,9 +163,11 @@ a {
 }
 
 .welcome-text-wrapper::before {
+	margin-bottom: -1px;
 	clip-path: polygon(0 0, 0% 100%, 100% 100%);
 }
 .welcome-text-wrapper::after {
+	margin-top: -1px;
 	clip-path: polygon(100% 0, 0 0, 100% 100%);
 }
 
