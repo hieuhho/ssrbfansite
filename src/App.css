@@ -151,13 +151,22 @@ a {
 	width: clamp(35ch, 100%, 55ch);
 }
 
-.welcome-text-wrapper::before {
+.welcome-text-wrapper::before,
+.welcome-text-wrapper::after {
 	content: "";
 	height: 20px;
 	width: 100%;
-	background-color: rebeccapurple;
+	background-color: var(--gold);
 	display: block;
 }
+
+.welcome-text-wrapper::before {
+	clip-path: polygon(0 0, 0% 100%, 100% 100%);
+}
+.welcome-text-wrapper::after {
+	clip-path: polygon(100% 0, 0 0, 100% 100%);
+}
+
 .welcome-text {
 	color: var(--black);
 	background: #d1b487;

@@ -6,14 +6,16 @@ const Home = () => {
 	return (
 		<main id="home">
 			<img className="welcome-header" src={title} alt="SHISHIRO BOTAN" />
-			<div className="welcome-text">
-				<h2>Welcome!</h2>
-				<p>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris luctus
-					ipsum et finibus faucibus. Phasellus eu sodales elit. Pellentesque sed
-					porttitor lectus. Proin et nisl elementum, cursus nisl at, feugiat
-					lacus.
-				</p>
+			<div className="welcome-text-wrapper">
+				<div className="welcome-text">
+					<h2>Welcome!</h2>
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
+						luctus ipsum et finibus faucibus. Phasellus eu sodales elit.
+						Pellentesque sed porttitor lectus. Proin et nisl elementum, cursus
+						nisl at, feugiat lacus.
+					</p>
+				</div>
 			</div>
 			<div className="botan-img-container">
 				<img
