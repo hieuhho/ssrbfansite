@@ -53,8 +53,19 @@ main::after {
 	content: "";
 	position: absolute;
 	top: 0;
-	width: 3rem;
 	height: 100%;
+	background-size: 100% 100%;
+}
+
+main::before {
+	width: 0.6rem;
+	background-color: #fff;
+	left: -0.6rem;
+}
+
+main::after {
+	width: 3rem;
+	right: -3rem;
 	background-image: linear-gradient(
 		90deg,
 		#ffffff 20%,
@@ -67,15 +78,6 @@ main::after {
 		#ffffff 80%,
 		#ffffff 100%
 	);
-	background-size: 100% 100%;
-}
-
-main::before {
-	left: -3rem;
-}
-
-main::after {
-	right: -3rem;
 }
 
 main h1 {
