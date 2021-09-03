@@ -7,10 +7,11 @@ nav {
 	font-size: 1.2rem;
 	width: 100%;
 	position: relative;
+	border-bottom: 2px solid var(--gold);
 }
 
 .home-link {
-	height: 4rem;
+	height: calc(4rem - 2px);
 	display: flex;
 	align-items: center;
 	color: #fff;
@@ -71,17 +72,29 @@ nav {
 	place-items: center;
 	height: 25%;
 	width: 100%;
-	border-radius: 4px;
-	transition: background-color 250ms ease-out, color 250ms ease-out;
+	position: relative;
 }
 
-.nav-menu li:hover {
-	background-color: #d1c1be;
+.nav-menu li::before {
+	content: "";
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 0%;
+	background: var(--gold);
+	z-index: -1;
+	transition: height 250ms ease-out;
+}
+
+.nav-menu li:hover::before {
+	height: 100%;
 }
 
 .nav-menu a {
 	color: #fff;
 	text-decoration: none;
+	transition: color 250ms ease-out;
 }
 
 .nav-menu li:hover a {
@@ -115,9 +128,25 @@ nav {
 
 	.nav-menu li {
 		height: auto;
-		padding: 0.3rem 0.4rem;
-		margin: 0 0.5rem;
-		border-radius: 4px;
-		transition: background-color 250ms ease-out, color 250ms ease-out;
+		padding: 0.5rem 1rem;
+		margin: 0;
+		border-top: solid 1px var(--bronze);
+		border-bottom: solid 1px var(--bronze);
+	}
+
+	.nav-menu li:nth-child(2n) {
+		border-left: 1px solid var(--bronze);
+		border-right: 1px solid var(--bronze);
+	}
+
+	.nav-menu li:first-child {
+		border-left: 1px solid var(--bronze);
+		border-top-left-radius: 0.25rem;
+		border-bottom-left-radius: 0.25rem;
+	}
+	.nav-menu li:last-child {
+		border-right: 1px solid var(--bronze);
+		border-top-right-radius: 0.25rem;
+		border-bottom-right-radius: 0.25rem;
 	}
 }
