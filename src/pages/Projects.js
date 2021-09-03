@@ -4,19 +4,27 @@ import { Link } from "react-router-dom";
 const Projects = () => {
 	return (
 		<main id="projects">
-			{MenuItems.map((item, index) => {
-				return (
-					<Link to={item.path}>
+			<h1 className="title">Projects</h1>
+			<div className="projects-container">
+				{MenuItems.map((item, index) => {
+					return (
 						<div className="project">
-							<img src={item.img} />
-							<h2>{item.title}</h2>
-							<div className="project-desc">
-								<p>{item.desc}</p>
+							<Link to={item.path}>
+								<h2>{item.title}</h2>
+							</Link>
+							<div className="project-body">
+								<Link to={item.path}>
+									<img src={item.img} />
+								</Link>
+
+								<div className="project-desc">
+									<p>{item.desc}</p>
+								</div>
 							</div>
 						</div>
-					</Link>
-				);
-			})}
+					);
+				})}
+			</div>
 		</main>
 	);
 };
