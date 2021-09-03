@@ -1,155 +1,121 @@
-.navbar {
-  /* background: linear-gradient(90deg, rgb(28, 27, 27) 0%, rgb(26, 23, 23) 100%); */
-  background: black;
-  height: 80px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 1.2rem;
-  position: absolute;
-  width: 100%;
-  z-index: 9999;
+nav {
+	background: var(--black);
+	padding: 1rem;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	font-size: 1.2rem;
+	width: 100%;
+	position: relative;
 }
 
+.home-link {
+	height: 4rem;
+	display: flex;
+	align-items: center;
+	color: #fff;
+	text-decoration: none;
+}
 
 .logo {
-  display: flex;
-  max-height: 80px;
+	display: flex;
+	height: 100%;
+	width: 100%;
 }
 
-.navbar-text {
-  justify-self: start;
-  color: #fff;
-  font-size: 2rem;
+.title {
+	margin: 0 0 0 1rem;
+	white-space: nowrap;
 }
 
 .fa-leaf {
-  margin-left: 0.5rem;
-  font-size: 1.6rem;
-  color: greenyellow;
-}
-
-.nav-menu {
-  display: grid;
-  grid-template-columns: repeat(6, auto);
-  grid-gap: 10px;
-  list-style: none;
-  text-align: center;
-  width: 60vw;
-  justify-content: end;
-  margin-right: 2rem;
-}
-
-.nav-item {
-  display: flex;
-  align-items: center;
-  height: 80px;
-}
-
-.nav-links {
-  color: white;
-  text-decoration: none;
-  padding: 0.5rem 1rem;
-}
-
-.nav-links:hover {
-  background-color: #434744;
-  background-color: #af9fa9;
-  border-radius: 4px;
-  transition: all 0.2s ease-out;
+	margin-left: 0.5rem;
+	font-size: 1.6rem;
+	color: greenyellow;
 }
 
 .fa-bars {
-  color: #fff;
+	color: #fff;
 }
 
-.nav-links-mobile {
-  display: none;
+.hamburger {
+	display: block;
+	cursor: pointer;
 }
 
-.menu-icon {
-  display: none;
+.nav-menu {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	list-style: none;
+	height: calc(100vh - 6rem);
+	background: #313131;
+	transform: translateX(-100%);
+	transition: transform 750ms ease-in-out;
 }
 
-@media screen and (max-width: 1190px) {
-  .NavbarItems {
-    position: relative;
-  }
+.nav-menu__active {
+	transform: translateX(0);
+}
 
-  .nav-menu {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 90vh;
-    position: absolute;
-    top: 80px;
-    left: -100%;
-    opacity: 1;
-    transition: all 0.5s ease;
-  }
+.nav-menu li {
+	height: 25%;
+	padding: 0.2rem 0.4rem;
+	margin: 3rem 0.5rem;
+	border-radius: 4px;
+	transition: background-color 250ms ease-out, color 250ms ease-out;
+}
 
-  .nav-menu.active {
-    background: #242222;
-    left: 0;
-    opacity: 1;
-    transition: all 0.5s ease;
-    z-index: 1;
-  }
+.nav-menu li:hover {
+	background-color: #d1c1be;
+}
 
-  .nav-links {
-    text-align: center;
-    padding: 2rem;
-    width: 100%;
-    display: table;
-  }
+.nav-menu a {
+	color: #fff;
+	text-decoration: none;
+}
 
-  .nav-links:hover {
-    background-color: #434744;
-    border-radius: 0;
-  }
+.nav-menu li:hover a {
+	color: var(--black);
+}
 
-  .navbar-logo {
-    position: absolute;
-    top: 0;
-    left: 0;
-    transform: translate(25%, 50%);
-  }
+@media (min-width: 960px) {
+	.hamburger {
+		display: none;
+	}
 
-  .menu-icon {
-    display: block;
-    position: absolute;
-    top: 0;
-    right: 0;
-    transform: translate(-100%, 60%);
-    font-size: 1.8rem;
-    cursor: pointer;
-  }
+	.nav-menu {
+		position: static;
+		width: auto;
+		margin: 0;
+		padding: 0;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		list-style: none;
+		height: 100%;
+		background: transparent;
+		transform: none;
+		transition: transform 0ms;
+	}
 
-  .fa-times {
-    color: #fff;
-    font-size: 2rem;
-  }
+	.nav-menu__active {
+		transform: none;
+	}
 
-  .nav-links-mobile {
-    display: block;
-    text-align: center;
-    padding: 1.5rem;
-    margin: 2rem auto;
-    border-radius: 4px;
-    width: 80%;
-    background: #434744;
-    text-decoration: none;
-    color: #fff;
-    font-size: 1.5rem;
-  }
-
-  .nav-links-mobile:hover {
-    background: #fff;
-    color: #434744;
-    transition: 250ms;
-  }
-
-  .logo {
-    display: none;
-  }
+	.nav-menu li {
+		height: auto;
+		padding: 0.3rem 0.4rem;
+		margin: 0 0.5rem;
+		border-radius: 4px;
+		transition: background-color 250ms ease-out, color 250ms ease-out;
+	}
 }

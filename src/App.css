@@ -7,6 +7,7 @@
 body {
 	font-family: "Poppins", sans-serif;
 	color: #fff;
+	overflow-x: hidden;
 }
 
 *,
@@ -20,6 +21,15 @@ main {
 	background-position: center;
 	background-size: cover;
 	background-repeat: no-repeat;
+	min-height: calc(100vh - 6rem);
+	margin: 0;
+}
+
+main h1 {
+	font-size: 3rem;
+	font-weight: 900;
+	text-align: center;
+	margin: 0;
 }
 
 .anniversary {
