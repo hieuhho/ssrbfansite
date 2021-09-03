@@ -1,15 +1,3 @@
-// import React from "react";
-
-// const Birthday = () => {
-//   return (
-//     <div>
-//       <h1 className="birthday">Birthday</h1>
-//     </div>
-//   );
-// };
-
-// export default Birthday;
-
 import React, { useState } from "react";
 import { VectorMap } from "react-jvectormap";
 
@@ -37,7 +25,7 @@ const mapData = {
 	TW: 1389618778,
 };
 
-const formattedNumber = (num: number, digits: number) => {
+const formattedNumber = (num, digits) => {
 	const si = [
 		{ value: 1, symbol: "" },
 		{ value: 1e3, symbol: " thousand " },
