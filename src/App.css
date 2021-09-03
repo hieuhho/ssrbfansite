@@ -4,7 +4,8 @@
 	--black: #1f1f1f;
 	--gray-100: #303030;
 	--gray-200: #3d3d3d;
-	--gold: #d1b487;
+	--bronze: #d1b487;
+	--gold: #e0c673;
 }
 
 body {
@@ -173,7 +174,7 @@ a {
 
 .welcome-text {
 	color: var(--black);
-	background: #d1b487;
+	background: var(--gold);
 	padding: 1rem;
 	width: 100%;
 }
@@ -207,39 +208,23 @@ a {
 	Anniversary Page
 */
 
-.anniversary {
+#anniversary {
 	display: flex;
-	height: 100vh;
-	align-items: top;
-	justify-content: center;
+	flex-direction: column;
+}
+
+.anniversary-title {
 	font-size: 3rem;
-	background-image: url("./images/bg.png");
-	background-position: inherit;
-	background-size: cover;
-	background-repeat: no-repeat;
 	text-shadow: 2px 2px black;
 	font-size: 100px;
 }
 
-.anniversary_anchor {
-	color: #fff;
-	height: 30%;
-	margin-top: 80px;
-	padding-top: 20px;
-}
-
-.fa-external-link-square-alt {
-	margin-left: 0.5rem;
-	font-size: 1.6rem;
-}
-
-iframe {
+#anniversary_iframe {
+	flex: 1;
+	width: 100%;
+	height: 100%;
+	border: none;
 	display: block;
-	width: 50%;
-	height: 50%;
-	position: absolute;
-	top: 25%;
-	left: 25%;
 }
 
 /*

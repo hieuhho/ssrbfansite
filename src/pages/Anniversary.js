@@ -2,18 +2,10 @@ import React from "react";
 
 const Anniversary = () => {
 	return (
-		<main>
-				<h1 className="anniversary">Anniversary</h1>
-				<a
-					className="anniversary_anchor"
-					href="https://nepolabo.fans/botan/menu"
-					target="_blank"
-					rel="noreferrer"
-				>
-					Anniversary
-					<i className="fas fa-external-link-square-alt"> </i>
-				</a>
+		<main id="anniversary">
+			<h1 className="anniversary-title">Anniversary</h1>
 			<iframe
+				id="anniversary_iframe"
 				title="botan anniversary"
 				src="https://nepolabo.fans/botan/menu"
 			></iframe>
