@@ -11,7 +11,7 @@ function Navbar() {
 		<nav>
 			{/* Logo */}
 			<Link className="home-link" to="/">
-				<h3 className="title">Shishiro Botan Fansite</h3>
+				<h3 className="nav-title">Shishiro Botan Fansite</h3>
 				<i className="fas fa-leaf" />
 			</Link>
 

@@ -24,7 +24,7 @@ nav {
 	width: 100%;
 }
 
-.title {
+.nav-title {
 	margin: 0 0 0 1rem;
 	white-space: nowrap;
 }
@@ -130,22 +130,22 @@ nav {
 		height: auto;
 		padding: 0.5rem 1rem;
 		margin: 0;
-		border-top: solid 1px var(--bronze);
-		border-bottom: solid 1px var(--bronze);
+		border-top: solid 1.5px var(--bronze);
+		border-bottom: solid 1.5px var(--bronze);
 	}
 
 	.nav-menu li:nth-child(2n) {
-		border-left: 1px solid var(--bronze);
-		border-right: 1px solid var(--bronze);
+		border-left: 1.5px solid var(--bronze);
+		border-right: 1.5px solid var(--bronze);
 	}
 
 	.nav-menu li:first-child {
-		border-left: 1px solid var(--bronze);
+		border-left: 1.5px solid var(--bronze);
 		border-top-left-radius: 0.25rem;
 		border-bottom-left-radius: 0.25rem;
 	}
 	.nav-menu li:last-child {
-		border-right: 1px solid var(--bronze);
+		border-right: 1.5px solid var(--bronze);
 		border-top-right-radius: 0.25rem;
 		border-bottom-right-radius: 0.25rem;
 	}
