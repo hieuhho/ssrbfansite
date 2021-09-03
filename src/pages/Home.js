@@ -1,9 +1,11 @@
 import React from "react";
-import Shishiro_Botan from "../images/Shishiro_Botan.png";
+import botanForeground from "../images/botan.png";
+import title from "../images/botan.svg";
 
 const Home = () => {
 	return (
 		<main id="home">
+			<img className="welcome-header" src={title} alt="SHISHIRO BOTAN" />
 			<div className="welcome-text">
 				<h2>Welcome!</h2>
 				<p>
@@ -16,7 +18,7 @@ const Home = () => {
 			<div className="botan-img-container">
 				<img
 					className="botan-img"
-					src={Shishiro_Botan}
+					src={botanForeground}
 					alt="A full body shot of Botan in her original outfit."
 				/>
 			</div>
