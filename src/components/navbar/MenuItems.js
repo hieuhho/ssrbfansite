@@ -13,20 +13,20 @@
     path: "/birthday",
     cName: "dropdown-link"
   },
-  {
-    title: "1M Milestone",
-    img: "https://i.picsum.photos/id/313/400/900.jpg?hmac=fVxZssWtwwnIp6Vs1iVfRxpsBXsk4eixcr18ncvwwY8",
-    desc: "Under Constuction",
-    path: "/milestone",
-    cName: "dropdown-link"
-  },
   // {
-  //   title: "Taiwan Project",
-  //   img: "https://i.picsum.photos/id/308/400/900.jpg?hmac=K-lTXDPeU9ZwtQscSDdJnjsVC33kPHBXUNGCDmx2k04",
-  //   desc: "Sed imperdiet consectetur feugiat. Integer egestas maximus libero, ut tincidunt est. Praesent magna mi, dignissim vitae sollicitudin at, fermentum ornare purus.",
-  //   path: "/taiwan",
+  //   title: "1M Milestone",
+  //   img: "https://i.picsum.photos/id/313/400/900.jpg?hmac=fVxZssWtwwnIp6Vs1iVfRxpsBXsk4eixcr18ncvwwY8",
+  //   desc: "Under Construction",
+  //   path: "/milestone",
   //   cName: "dropdown-link"
   // },
+  {
+    title: "Taiwan Project",
+    img: "https://i.picsum.photos/id/308/400/900.jpg?hmac=K-lTXDPeU9ZwtQscSDdJnjsVC33kPHBXUNGCDmx2k04",
+    desc: "Under Construction",
+    path: "/taiwan",
+    cName: "dropdown-link"
+  },
   // {
   //   title: "English Project",
   //   img: "https://i.picsum.photos/id/863/400/900.jpg?hmac=zA6xx7JLzZjgRXHNsdB2ZQXIou3lZx70mI92i-yrKns",
