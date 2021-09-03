@@ -99,6 +99,11 @@ a {
 	}
 }
 
+.title {
+	font-size: 5rem;
+	padding: 1rem 0;
+}
+
 /* scrollbar */
 
 ::-webkit-scrollbar {
@@ -205,6 +210,70 @@ a {
 }
 
 /*
+	Projects Page
+*/
+
+.projects-container {
+	display: flex;
+	flex-direction: column;
+	margin: 0 2rem;
+}
+
+.project {
+	display: flex;
+	flex-direction: column;
+	background-color: var(--gold);
+	color: var(--black);
+	padding: 1.5rem;
+	margin-bottom: 1.5rem;
+}
+
+.project::before,
+.project::after {
+	content: "";
+	height: 20px;
+	width: 100%;
+	background-color: var(--gold);
+	display: block;
+}
+
+.project::before {
+	margin-bottom: -1px;
+	clip-path: polygon(0 0, 0% 100%, 100% 100%);
+}
+
+.project::after {
+	margin-top: -1px;
+	clip-path: polygon(100% 0, 0 0, 100% 100%);
+}
+
+.project h2 {
+	font-size: 2rem;
+	font-weight: 900;
+	color: var(--black);
+}
+
+.project-body {
+	width: 100%;
+	display: flex;
+}
+
+.project-body a {
+	max-height: 20em;
+	width: 100%;
+}
+
+.project-body img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.project-desc {
+	width: 100%;
+}
+
+/*
 	Anniversary Page
 */
 
@@ -213,74 +282,12 @@ a {
 	flex-direction: column;
 }
 
-.anniversary-title {
-	font-size: 3rem;
-	text-shadow: 2px 2px black;
-	font-size: 100px;
-}
-
 #anniversary_iframe {
 	flex: 1;
 	width: 100%;
 	height: 100%;
 	border: none;
 	display: block;
-}
-
-/*
-	Projects Page
-*/
-
-#projects {
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr;
-}
-
-.project {
-	position: relative;
-	display: grid;
-	place-items: center;
-	isolation: isolate;
-	height: 100%;
-	overflow-y: hidden;
-}
-
-.project img {
-	position: absolute;
-	top: 0;
-	left: 0;
-	z-index: -1;
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
-	filter: brightness(0.6);
-}
-
-.project h2 {
-	font-size: 2rem;
-	font-weight: 900;
-}
-
-.project-desc {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background-color: rgba(0, 0, 0, 0.6);
-	backdrop-filter: blur(1rem);
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	z-index: 1;
-	transform: translateY(100%);
-	transition: transform 0.5s ease-in-out;
-	padding: 2rem 1rem;
-}
-
-.project:hover .project-desc {
-	transform: translateY(0);
 }
 
 /* .map {
