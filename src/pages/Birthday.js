@@ -75,17 +75,19 @@ const Birthday = () => {
 	};
 
 	return (
-		<main id="map">
-			<h1 className="title">SSRB World</h1>
-			<button onClick={() => setTip("true")}>Tweet your SSRB</button>
+		<div id="map">
+			{/* <button onClick={() => setTip("true")}>Tweet your SSRB</button>
 			<Modal title="Instructions" onClose={() => setTip(false)} show={tip}>
 				<p>Tweet this #SSRBWOrld</p>
-			</Modal>
+			</Modal> */}
 			<Modal
 				title={`${country.fans} SSRBmins from ${country.cName}`}
 				onClose={() => setShow(false)}
 				show={show}
 			></Modal>
+			<div>
+				<p>Click a country to see the number of SSRBmins</p>
+			</div>
 			<VectorMap
 				map={"world_mill"}
 				backgroundColor="#0077be"
@@ -116,7 +118,7 @@ const Birthday = () => {
 					],
 				}}
 			/>
-		</main>
+		</div>
 	);
 };
 export default Birthday;
