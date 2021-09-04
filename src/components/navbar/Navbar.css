@@ -7,7 +7,9 @@ nav {
 	font-size: 1.2rem;
 	width: 100%;
 	position: relative;
+	z-index: 1;
 	border-bottom: 2px solid var(--gold);
+	box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.2);
 }
 
 .home-link {
@@ -82,7 +84,7 @@ nav {
 	left: 0;
 	width: 100%;
 	height: 0%;
-	background: var(--gold);
+	background: var(--bronze);
 	z-index: -1;
 	transition: height 250ms ease-out;
 }
@@ -97,8 +99,8 @@ nav {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	width:100%;
-  height: 100%;
+	width: 100%;
+	height: 100%;
 	transition: color 250ms ease-out;
 }
 
@@ -135,22 +137,22 @@ nav {
 		height: auto;
 		padding: 0.5rem 1rem;
 		margin: 0;
-		border-top: solid 1.5px var(--bronze);
-		border-bottom: solid 1.5px var(--bronze);
+		border-top: solid 2px var(--gold);
+		border-bottom: solid 2px var(--gold);
 	}
 
 	.nav-menu li:nth-child(2n) {
-		border-left: 1.5px solid var(--bronze);
-		border-right: 1.5px solid var(--bronze);
+		border-left: 2px solid var(--gold);
+		border-right: 2px solid var(--gold);
 	}
 
 	.nav-menu li:first-child {
-		border-left: 1.5px solid var(--bronze);
+		border-left: 2px solid var(--gold);
 		border-top-left-radius: 0.25rem;
 		border-bottom-left-radius: 0.25rem;
 	}
 	.nav-menu li:last-child {
-		border-right: 1.5px solid var(--bronze);
+		border-right: 2px solid var(--gold);
 		border-top-right-radius: 0.25rem;
 		border-bottom-right-radius: 0.25rem;
 	}
