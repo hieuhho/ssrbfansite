@@ -239,7 +239,15 @@ a {
 	padding: 2rem;
 	border-radius: 0.5rem;
 	overflow: hidden;
+	box-shadow: 0 2px 0.2rem rgba(0, 0, 0, 0.3), 0 4px 0.4rem rgba(0, 0, 0, 0.3),
+		0 16px 0.8rem rgba(0, 0, 0, 0.3);
+
 	border: 2px solid var(--bronze);
+	transition: border 350ms ease-out;
+}
+
+.project:hover {
+	border: 2px solid #fff;
 }
 
 .project-heading {
