@@ -1,16 +1,17 @@
-@import url("https://fonts.googleapis.com/css2?family=Lato:ital@0;1&family=Staatliches&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;900&family=Staatliches&display=swap");
 
 :root {
 	--black: #1f1f1f;
 	--gray-100: #303030;
 	--gray-200: #3d3d3d;
+	--slate-gray: hsl(210, 10%, 47%);
 	--bronze: #d1b487;
 	--gold: #e0c673;
 }
 
 body {
 	font-family: "Lato", sans-serif;
-	background-color: var(--gray-200);
+	background-color: var(--slate-gray);
 	color: #fff;
 	overflow-x: hidden;
 }
@@ -56,17 +57,18 @@ main::after {
 	top: 0;
 	height: 100%;
 	background-size: 100% 100%;
+	z-index: -1;
 }
 
 main::before {
-	width: 0.6rem;
+	width: 0.5rem;
 	background-color: #fff;
-	left: -0.6rem;
+	left: -0.5rem;
 }
 
 main::after {
-	width: 3rem;
-	right: -3rem;
+	width: 2.5rem;
+	right: -2.5rem;
 	background-image: linear-gradient(
 		90deg,
 		#ffffff 20%,
@@ -97,6 +99,12 @@ a {
 	main {
 		padding: 0 0.5rem;
 	}
+}
+
+.title {
+	font-size: 5rem;
+	letter-spacing: 4px;
+	padding: 1rem 0 2.5rem 0;
 }
 
 /* scrollbar */
@@ -130,10 +138,9 @@ a {
 
 .welcome-header {
 	position: absolute;
-	top: 0;
+	top: 2rem;
 	left: 0;
 	width: 100%;
-	height: 100%;
 	z-index: -1;
 	padding: 0 2rem;
 }
@@ -205,6 +212,109 @@ a {
 }
 
 /*
+	Projects Page
+*/
+
+#projects {
+	position: relative;
+	isolation: isolate;
+}
+
+.projects-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 0 2rem;
+}
+
+.project {
+	display: flex;
+	flex-direction: column;
+	margin: 0 1rem 2rem 1rem;
+	position: relative;
+	isolation: isolate;
+	max-width: 50rem;
+	width: 100%;
+	padding: 2rem;
+	border-radius: 0.5rem;
+	overflow: hidden;
+	box-shadow: 0 2px 0.2rem rgba(0, 0, 0, 0.3), 0 4px 0.4rem rgba(0, 0, 0, 0.3),
+		0 16px 0.8rem rgba(0, 0, 0, 0.3);
+
+	border: 2px solid var(--bronze);
+	transition: border 350ms ease-out;
+}
+
+.project:hover {
+	border: 2px solid #fff;
+}
+
+.project-heading {
+	width: max-content;
+	height: max-content;
+}
+
+.project img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	z-index: -2;
+	filter: brightness(0.5);
+	transition: filter 350ms ease-out, transform 350ms ease-out;
+}
+
+.project:hover img {
+	filter: brightness(0.4);
+	transform: scale(1.05);
+}
+
+.project h2 {
+	font-family: "Lato", sans-serif;
+	font-size: 2rem;
+	font-weight: 900;
+	padding-bottom: 0.2rem;
+	position: relative;
+}
+
+.project h2::after {
+	content: "";
+	position: absolute;
+	bottom: -0.1rem;
+	left: 0;
+	width: 100%;
+	height: 0.15rem;
+	background-color: var(--bronze);
+	margin-top: 0.5rem;
+	transition: transform 100ms ease-out;
+}
+
+.project:hover h2::after {
+	transform: translateY(0.1rem);
+}
+
+.project-body {
+	display: flex;
+	flex-direction: column-reverse;
+	padding-right: 1rem;
+	overflow: hidden;
+}
+
+.project-desc {
+	padding: 0.5rem;
+	width: 100%;
+}
+
+@media screen and (min-width: 960px) {
+	.project-body {
+		flex-direction: row;
+	}
+}
+
+/*
 	Anniversary Page
 */
 
@@ -213,74 +323,12 @@ a {
 	flex-direction: column;
 }
 
-.anniversary-title {
-	font-size: 3rem;
-	text-shadow: 2px 2px black;
-	font-size: 100px;
-}
-
 #anniversary_iframe {
 	flex: 1;
 	width: 100%;
-	height: 100%;
+	height: 100vh;
 	border: none;
 	display: block;
-}
-
-/*
-	Projects Page
-*/
-
-#projects {
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr;
-}
-
-.project {
-	position: relative;
-	display: grid;
-	place-items: center;
-	isolation: isolate;
-	height: 100%;
-	overflow-y: hidden;
-}
-
-.project img {
-	position: absolute;
-	top: 0;
-	left: 0;
-	z-index: -1;
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
-	filter: brightness(0.6);
-}
-
-.project h2 {
-	font-size: 2rem;
-	font-weight: 900;
-}
-
-.project-desc {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background-color: rgba(0, 0, 0, 0.6);
-	backdrop-filter: blur(1rem);
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	z-index: 1;
-	transform: translateY(100%);
-	transition: transform 0.5s ease-in-out;
-	padding: 2rem 1rem;
-}
-
-.project:hover .project-desc {
-	transform: translateY(0);
 }
 
 /* .map {
@@ -319,54 +367,12 @@ a {
 
  */
 
-.jvectormap-container {
+/* 
+	SSRB World Page
+ */
+
+#map {
+	display: grid;
+	grid-template-columns: minmax(150px, 25%) 1fr;
 	width: 100%;
-	height: 100%;
-	position: relative;
-	overflow: hidden;
-	touch-action: none;
-	z-index: 2;
-}
-
-.jvectormap-tip {
-	position: absolute;
-	display: none;
-	border: solid 1px #cdcdcd;
-	border-radius: 3px;
-	background: #292929;
-	color: white;
-	font-family: sans-serif, Verdana;
-	font-size: smaller;
-	padding: 3px;
-	z-index: 3;
-}
-
-.jvectormap-zoomin,
-.jvectormap-zoomout {
-	position: absolute;
-	right: 50px;
-	top: 50px;
-	border-radius: 3px;
-	background: #292929;
-	padding: 3px;
-	color: white;
-	cursor: pointer;
-	line-height: 10px;
-	text-align: center;
-	box-sizing: content-box;
-	font-size: x-small;
-}
-
-.jvectormap-zoomin,
-.jvectormap-zoomout {
-	width: 10px;
-	height: 10px;
-}
-
-.jvectormap-zoomin {
-	top: 10px;
-}
-
-.jvectormap-zoomout {
-	top: 30px;
 }

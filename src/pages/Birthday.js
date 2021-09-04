@@ -48,7 +48,7 @@ const Birthday = () => {
 		fans: "",
 	});
 	const [show, setShow] = useState(false);
-	const [tip, setTip] = useState(false)
+	const [tip, setTip] = useState(false);
 
 	const handleHover = (e, el, countryCode) => {
 		const fans = mapData[countryCode] ? mapData[countryCode] : 0;
@@ -75,31 +75,25 @@ const Birthday = () => {
 	};
 
 	return (
-		<main className="map">
-			<button onClick={() => setTip('true')}>
-			Tweet your SSRB
-			</button>
-			<Modal
-				title='Instructions'
-				children='Tweet this #SSRBWOrld'
-				onClose={() => setTip(false)}
-				show={tip}
-			></Modal>
+		<div id="map">
+			{/* <button onClick={() => setTip("true")}>Tweet your SSRB</button>
+			<Modal title="Instructions" onClose={() => setTip(false)} show={tip}>
+				<p>Tweet this #SSRBWOrld</p>
+			</Modal> */}
 			<Modal
 				title={`${country.fans} SSRBmins from ${country.cName}`}
 				onClose={() => setShow(false)}
 				show={show}
 			></Modal>
+			<div>
+				<p>Click a country to see the number of SSRBmins</p>
+			</div>
 			<VectorMap
 				map={"world_mill"}
 				backgroundColor="#0077be"
-				containerStyle={{
-					width: "65%",
-					height: "520px",
-				}}
 				onRegionTipShow={handleHover}
 				onRegionClick={handleClick}
-				containerClassName="map"
+				containerClassName="world-map"
 				regionStyle={{
 					initial: {
 						fill: "#e4e4e4",
@@ -124,7 +118,7 @@ const Birthday = () => {
 					],
 				}}
 			/>
-		</main>
+		</div>
 	);
 };
 export default Birthday;
