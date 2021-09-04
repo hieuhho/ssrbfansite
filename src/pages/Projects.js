@@ -1,6 +1,6 @@
 import { MenuItems } from "../components/navbar/MenuItems";
 import { Link } from "react-router-dom";
-import title from "../images/botan.svg";
+import title from "../images/projects.svg";
 
 const Projects = () => {
 	return (
