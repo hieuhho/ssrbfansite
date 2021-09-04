@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Lato:ital@0;1&family=Staatliches&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;900&family=Staatliches&display=swap");
 
 :root {
 	--black: #1f1f1f;
@@ -101,7 +101,7 @@ a {
 
 .title {
 	font-size: 5rem;
-	padding: 1rem 0;
+	padding: 1rem 0 2.5rem 0;
 }
 
 /* scrollbar */
@@ -216,61 +216,64 @@ a {
 .projects-container {
 	display: flex;
 	flex-direction: column;
-	margin: 0 2rem;
+	justify-content: center;
+	align-items: center;
+	margin: 0 auto;
 }
 
 .project {
 	display: flex;
 	flex-direction: column;
-	background-color: var(--gold);
-	color: var(--black);
-	padding: 1.5rem;
-}
-
-.project-wrapper::before,
-.project-wrapper::after {
-	content: "";
-	height: 20px;
+	margin: 0 1rem 2rem 1rem;
+	position: relative;
+	isolation: isolate;
+	max-width: 50rem;
 	width: 100%;
-	background-color: var(--gold);
-	display: block;
+	padding: 2rem;
+	border-radius: 0.5rem;
+	overflow: hidden;
 }
 
-.project-wrapper::before {
-	margin-bottom: -1px;
-	clip-path: polygon(0 0, 0% 100%, 100% 100%);
+.project-heading {
+	width: max-content;
+	height: max-content;
 }
 
-.project-wrapper::after {
-	margin-top: -1px;
-	clip-path: polygon(100% 0, 0 0, 100% 100%);
-	margin-bottom: 1.5rem;
-}
-
-.project h2 {
-	font-size: 2rem;
-	font-weight: 900;
-	color: var(--black);
-}
-
-.project-body {
-	width: 100%;
-	display: flex;
-}
-
-.project-body a {
-	max-height: 20em;
-	width: 100%;
-}
-
-.project-body img {
+.project img {
+	position: absolute;
+	top: 0;
+	left: 0;
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
+	z-index: -2;
+	filter: brightness(0.5);
+}
+
+.project h2 {
+	font-family: "Lato", sans-serif;
+	font-size: 2rem;
+	font-weight: 900;
+	padding-bottom: 0.2rem;
+	border-bottom: var(--gold) solid 0.2rem;
+}
+
+.project-body {
+	display: flex;
+	flex-direction: column-reverse;
+	padding-right: 1rem;
+	overflow: hidden;
 }
 
 .project-desc {
+	padding: 0.5rem;
 	width: 100%;
+}
+
+@media screen and (min-width: 960px) {
+	.project-body {
+		flex-direction: row;
+	}
 }
 
 /*

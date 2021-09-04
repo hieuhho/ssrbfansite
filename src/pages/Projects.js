@@ -8,19 +8,16 @@ const Projects = () => {
 			<div className="projects-container">
 				{MenuItems.map((item, index) => {
 					return (
-						<div className="project-wrapper">
-							<div className="project">
-								<Link to={item.path}>
-									<h2>{item.title}</h2>
-								</Link>
-								<div className="project-body">
-									<Link to={item.path}>
-										<img src={item.img} />
-									</Link>
-
-									<div className="project-desc">
-										<p>{item.desc}</p>
-									</div>
+						<div className="project">
+							<Link to={item.path}>
+								<img src={item.img} />
+							</Link>
+							<Link className="project-heading" to={item.path}>
+								<h2>{item.title}</h2>
+							</Link>
+							<div className="project-body">
+								<div className="project-desc">
+									<p>{item.desc}</p>
 								</div>
 							</div>
 						</div>
