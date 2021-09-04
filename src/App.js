@@ -2,18 +2,18 @@ import React from "react";
 import "./App.css";
 import "./normalize.css";
 import Navbar from "./components/navbar/Navbar";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Redirect  } from "react-router-dom";
 import Home from "./pages/Home";
-import Activity from "./pages/Activity";
-import Videos from "./pages/Videos";
 import Projects from "./pages/Projects";
-import Anniversary from "./pages/Anniversary";
-import Birthday from "./pages/Birthday";
-import Milestone from "./pages/Milestone";
-import Taiwan from "./pages/Taiwan";
-import English from "./pages/English";
+import Videos from "./pages/Videos";
 import Fanarts from "./pages/Fanarts";
 import About from "./pages/About";
+import Anniversary from "./pages/Anniversary";
+import Birthday from "./pages/Birthday";
+import Taiwan from "./pages/Taiwan";
+// import Activity from "./pages/Activity";
+// import Milestone from "./pages/Milestone";
+// import English from "./pages/English";
 // import Population from "./pages/Population"
 
 function App() {
@@ -22,17 +22,23 @@ function App() {
 			<Navbar />
 			<Switch>
 				<Route path="/" exact component={Home} />
+				<Route exact path="/ssrbfansite">
+          <Redirect to="/" />
+        </Route>
+				<Route exact path="/projects" component={Projects} />
+				<Route exact path="/videos" component={Videos} />
+				<Route exact path="/fanarts" component={Fanarts} />
+				<Route exact path="/about" component={About} />
+
+				<Route exact path="/anniversary" component={Anniversary} />
+				<Route exact path="/birthday" component={Birthday} />
+				<Route exact path="/taiwan" component={Taiwan} />
+
+
+				{/* implement later
 				<Route path="/activity" component={Activity} />
-				<Route path="/videos" component={Videos} />
-				<Route path="/projects" component={Projects} />
-				<Route path="/anniversary" component={Anniversary} />
-				<Route path="/birthday" component={Birthday} />
 				<Route path="/milestone" component={Milestone} />
-				<Route path="/taiwan" component={Taiwan} />
-				<Route path="/daipan" component={English} />
-				<Route path="/fanarts" component={Fanarts} />
-				<Route path="/about" component={About} />
-				{/* <Route path="/population" component={Population} /> */}
+				<Route path="/daipan" component={English} /> */}
 			</Switch>
 		</Router>
 	);
