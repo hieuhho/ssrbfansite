@@ -85,9 +85,9 @@ const Birthday = () => {
 				onClose={() => setShow(false)}
 				show={show}
 			></Modal>
-			<div>
+			<aside className="map-sidebar">
 				<p>Click a country to see the number of SSRBmins</p>
-			</div>
+			</aside>
 			<VectorMap
 				map={"world_mill"}
 				backgroundColor="#0077be"
