@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { VectorMap } from "react-jvectormap";
+import placeholder from "../images/placeholderSSRB.png";
 
 import Modal from "../Modal";
 const { overwrite, getName } = require("country-list");
@@ -108,6 +109,34 @@ const Birthday = () => {
 				</svg>
 				<div className="map-sidebar-content">
 					<h4 className="map-location">New Zealand</h4>
+					<div className="map-card">
+						<img className="map-card-img" src={placeholder}></img>
+						<div className="map-card-body">
+							<h5>Person Name</h5>
+							<p>message goes here, hello i am a message please read me</p>
+						</div>
+					</div>
+					<div className="map-card">
+						<img className="map-card-img" src={placeholder}></img>
+						<div className="map-card-body">
+							<h5>Person Name</h5>
+							<p>message goes here, hello i am a message please read me</p>
+						</div>
+					</div>
+					<div className="map-card">
+						<img className="map-card-img" src={placeholder}></img>
+						<div className="map-card-body">
+							<h5>Person Name</h5>
+							<p>message goes here, hello i am a message please read me</p>
+						</div>
+					</div>
+					<div className="map-card">
+						<img className="map-card-img" src={placeholder}></img>
+						<div className="map-card-body">
+							<h5>Person Name</h5>
+							<p>message goes here, hello i am a message please read me</p>
+						</div>
+					</div>
 				</div>
 			</aside>
 

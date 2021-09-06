@@ -11,6 +11,7 @@
 	--slate-100: #141a1f;
 	--bronze-500: #d1b487;
 	--gold-500: #e0c673;
+	--gold-700: #ffd95d;
 }
 
 body {
@@ -268,7 +269,7 @@ a {
 .project {
 	display: flex;
 	flex-direction: column;
-	margin: 0 1rem 2rem 1rem;
+	margin: 0 1rem 4rem 1rem;
 	position: relative;
 	isolation: isolate;
 	max-width: 50rem;
@@ -276,9 +277,6 @@ a {
 	padding: 2rem;
 	border-radius: 0.5rem;
 	overflow: hidden;
-	box-shadow: 0 2px 0.2rem rgba(0, 0, 0, 0.3), 0 4px 0.4rem rgba(0, 0, 0, 0.3),
-		0 16px 0.8rem rgba(0, 0, 0, 0.3);
-
 	border: 2px solid var(--bronze-500);
 	transition: border 350ms ease-out;
 }
@@ -382,6 +380,8 @@ a {
 .map-sidebar {
 	background: var(--gray-200);
 	order: 1;
+	overflow-y: scroll;
+	height: calc(100vh - 6rem - 2px);
 }
 
 .map-sidebar-header {
@@ -423,8 +423,37 @@ a {
 	font-family: "Staatliches", cursive;
 	font-size: 1.75rem;
 	letter-spacing: 3px;
-	margin: 0.25em 0;
+	margin: 0.25em 0 1.5rem 0;
 	align-self: flex-start;
+}
+
+.map-card {
+	display: flex;
+	flex-direction: column;
+	background: var(--bronze-500);
+	color: var(--black);
+	border: var(--gold-700) solid 2px;
+	border-radius: 0.5rem;
+	box-shadow: 0 0.25rem 1rem #1f1f1faa;
+	overflow: hidden;
+	width: 100%;
+	flex-shrink: 0;
+	margin-bottom: 2rem;
+}
+
+.map-card-img {
+	width: 100%;
+	object-fit: contain;
+}
+
+.map-card-body {
+	border-top: #fff solid 2px;
+	padding: 0.5rem;
+}
+
+.map-card-body h5 {
+	font-size: 1.25rem;
+	margin: 0.5rem 0;
 }
 
 @media screen and (min-width: 960px) {
