@@ -1,23 +1,24 @@
 {
   "files": {
-    "main.css": "/ssrbfansite/static/css/main.d84fbd4a.chunk.css",
-    "main.js": "/ssrbfansite/static/js/main.454dab8d.chunk.js",
-    "main.js.map": "/ssrbfansite/static/js/main.454dab8d.chunk.js.map",
-    "runtime-main.js": "/ssrbfansite/static/js/runtime-main.28083f55.js",
-    "runtime-main.js.map": "/ssrbfansite/static/js/runtime-main.28083f55.js.map",
-    "static/js/2.f95e34d9.chunk.js": "/ssrbfansite/static/js/2.f95e34d9.chunk.js",
-    "static/js/2.f95e34d9.chunk.js.map": "/ssrbfansite/static/js/2.f95e34d9.chunk.js.map",
-    "index.html": "/ssrbfansite/index.html",
-    "static/css/main.d84fbd4a.chunk.css.map": "/ssrbfansite/static/css/main.d84fbd4a.chunk.css.map",
-    "static/js/2.f95e34d9.chunk.js.LICENSE.txt": "/ssrbfansite/static/js/2.f95e34d9.chunk.js.LICENSE.txt",
-    "static/media/botan.38d444ad.svg": "/ssrbfansite/static/media/botan.38d444ad.svg",
-    "static/media/botan.d12499b0.png": "/ssrbfansite/static/media/botan.d12499b0.png",
-    "static/media/projects.be3977dc.svg": "/ssrbfansite/static/media/projects.be3977dc.svg"
+    "main.css": "/static/css/main.038b253f.chunk.css",
+    "main.js": "/static/js/main.5915d768.chunk.js",
+    "main.js.map": "/static/js/main.5915d768.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.a9f80a17.js",
+    "runtime-main.js.map": "/static/js/runtime-main.a9f80a17.js.map",
+    "static/js/2.6b591ba0.chunk.js": "/static/js/2.6b591ba0.chunk.js",
+    "static/js/2.6b591ba0.chunk.js.map": "/static/js/2.6b591ba0.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.038b253f.chunk.css.map": "/static/css/main.038b253f.chunk.css.map",
+    "static/js/2.6b591ba0.chunk.js.LICENSE.txt": "/static/js/2.6b591ba0.chunk.js.LICENSE.txt",
+    "static/media/botan.38d444ad.svg": "/static/media/botan.38d444ad.svg",
+    "static/media/botan.d12499b0.png": "/static/media/botan.d12499b0.png",
+    "static/media/placeholderSSRB.bae72ac2.png": "/static/media/placeholderSSRB.bae72ac2.png",
+    "static/media/projects.be3977dc.svg": "/static/media/projects.be3977dc.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.28083f55.js",
-    "static/js/2.f95e34d9.chunk.js",
-    "static/css/main.d84fbd4a.chunk.css",
-    "static/js/main.454dab8d.chunk.js"
+    "static/js/runtime-main.a9f80a17.js",
+    "static/js/2.6b591ba0.chunk.js",
+    "static/css/main.038b253f.chunk.css",
+    "static/js/main.5915d768.chunk.js"
   ]
 }
