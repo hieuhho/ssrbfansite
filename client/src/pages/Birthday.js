@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { VectorMap } from "react-jvectormap";
-import placeholder from "../images/placeholderSSRB.png";
-
+import $ from 'jquery';
 import Modal from "../Modal";
+import placeholder from "../images/placeholderSSRB.png";
 const { overwrite, getName } = require("country-list");
 overwrite([
 	{
@@ -11,22 +11,25 @@ overwrite([
 	},
 ]);
 
-const mapData = {
-	CN: 213451451,
-	ID: 213451451,
-	IN: 1311559204,
-	US: 331883986,
-	PK: 210797836,
-	BR: 210301591,
-	NG: 208679114,
-	BD: 161062905,
-	RU: 141944641,
-	MX: 127318112,
-	HK: 1389618778,
-	TW: 1389618778,
-};
+// const mapData = {
+// 	CN: 213451451,
+// 	ID: 213451451,
+// 	IN: 1311559204,
+// 	US: 331883986,
+// 	PK: 210797836,
+// 	BR: 210301591,
+// 	NG: 208679114,
+// 	BD: 161062905,
+// 	RU: 141944641,
+// 	MX: 127318112,
+// 	HK: 1389618778,
+// 	TW: 1389618778,
+// };
 
 const formattedNumber = (num, digits) => {
+	if (num <= 999) {
+		return num
+	}
 	const si = [
 		{ value: 1, symbol: "" },
 		{ value: 1e3, symbol: " thousand " },
@@ -50,6 +53,7 @@ const Birthday = () => {
 	});
 	const [show, setShow] = useState(false);
 	const [tip, setTip] = useState(false);
+	const [mapData, setMapData] = useState({})
 
 	const handleHover = (e, el, countryCode) => {
 		const fans = mapData[countryCode] ? mapData[countryCode] : 0;
@@ -63,7 +67,7 @@ const Birthday = () => {
 		const fanNums = parseInt(
 			mapData[countryCode] ? mapData[countryCode] : 0,
 			10
-		);
+			);
 		const formattedFans = formattedNumber(fanNums, 2);
 		if (fanNums !== 0) {
 			setShow(true);
@@ -74,6 +78,19 @@ const Birthday = () => {
 		}
 		document.querySelectorAll(".jvectormap-tip").forEach((el) => el.remove());
 	};
+
+	useEffect(() => {
+		const getCountries = () => {
+			$.get({
+				url: '/fetch_country',
+				error: ((err) => console.error('AJAX GET FAILED', err)),
+				success: ((countries) => {
+					setMapData(countries);
+				}),
+			});
+		}
+		getCountries()
+	}, []);
 
 	return (
 		<div id="map">
@@ -108,7 +125,7 @@ const Birthday = () => {
 					<path fill="#303030" d="M0 0h1v1L0 0z" />
 				</svg>
 				<div className="map-sidebar-content">
-					<h4 className="map-location">New Zealand</h4>
+					<h4 className="map-location">{country.cName}</h4>
 					<div className="map-card">
 						<img className="map-card-img" src={placeholder} alt="placeholder"></img>
 						<div className="map-card-body">

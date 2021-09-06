@@ -1,29 +1,6 @@
-const { Client } = require('pg')
-
-// const client = new Client({
-//   user: process.env.DB_USER,
-//   password: process.env.DB_PASS
-//   host: process.env.DB_HOST,
-//   port: 5432,
-//   database: process.env.DB_DATABASE,
-//   ssl: true
-// });
-// client.connect()
-
-
-// const query = {
-//   name: 'fetch-user',
-//   text: 'SELECT * FROM username WHERE id = $1',
-//   values: [1],
-// }
-
-// client
-//   .query(query)
-//   .then(res => console.log(res.rows[0]))
-//   .catch(e => console.error(e.stack))
-
-
+require('dotenv').config();
 const Sequelize = require('sequelize');
+const { DataTypes } = require("sequelize");
 
 const sequelize = new Sequelize({
   database: process.env.DB_DATABASE,
@@ -38,6 +15,51 @@ const sequelize = new Sequelize({
       rejectUnauthorized: false
     }
   },
+  logging: false,
 });
 
-sequelize.authenticate();
+
+const Country = sequelize.define('country', {
+  location: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+    unique: true,
+    primaryKey: true
+  },
+  user_count: {
+    type: DataTypes.INTEGER
+  }
+}, {
+  timestamps: false
+});
+
+const Tweet = sequelize.define('tweet', {
+  username: {
+    type: DataTypes.STRING,
+    allowNull: false,
+    unique: true,
+    primaryKey: true
+  },
+  tweet: {
+    type: DataTypes.STRING,
+  },
+  image: {
+    type: DataTypes.STRING,
+  },
+  location: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+    primaryKey: true
+  },
+}, {
+  timestamps: false
+});
+
+Country.hasMany(Tweet);
+Tweet.belongsTo(Country);
+
+Country.sync();
+Tweet.sync();
+
+exports.Country = Country;
+exports.Tweet = Tweet;
