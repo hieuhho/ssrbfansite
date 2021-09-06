@@ -11,7 +11,7 @@ const Projects = () => {
 				{MenuItems.map((item, index) => {
 					return (
 						<Link className="project" to={item.path}>
-							<img src={item.img} />
+							<img src={item.img} alt="project_img" />
 							<h2 className="project-heading">{item.title}</h2>
 							<div className="project-body">
 								<div className="project-desc">

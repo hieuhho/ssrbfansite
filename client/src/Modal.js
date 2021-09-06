@@ -4,6 +4,7 @@ import { CSSTransition } from "react-transition-group";
 import "./Modal.css";
 
 const Modal = props => {
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const closeOnEscapeKeyDown = e => {
     if ((e.charCode || e.keyCode) === 27) {
       props.onClose();
@@ -15,7 +16,7 @@ const Modal = props => {
     return function cleanup() {
       document.body.removeEventListener("keydown", closeOnEscapeKeyDown);
     };
-  }, []);
+  }, [closeOnEscapeKeyDown]);
 
   return ReactDOM.createPortal(
     <CSSTransition
