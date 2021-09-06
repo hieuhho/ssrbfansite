@@ -110,28 +110,28 @@ const Birthday = () => {
 				<div className="map-sidebar-content">
 					<h4 className="map-location">New Zealand</h4>
 					<div className="map-card">
-						<img className="map-card-img" src={placeholder}></img>
+						<img className="map-card-img" src={placeholder} alt="placeholder"></img>
 						<div className="map-card-body">
 							<h5>Person Name</h5>
 							<p>message goes here, hello i am a message please read me</p>
 						</div>
 					</div>
 					<div className="map-card">
-						<img className="map-card-img" src={placeholder}></img>
+						<img className="map-card-img" src={placeholder} alt="placeholder"></img>
 						<div className="map-card-body">
 							<h5>Person Name</h5>
 							<p>message goes here, hello i am a message please read me</p>
 						</div>
 					</div>
 					<div className="map-card">
-						<img className="map-card-img" src={placeholder}></img>
+						<img className="map-card-img" src={placeholder} alt="placeholder"></img>
 						<div className="map-card-body">
 							<h5>Person Name</h5>
 							<p>message goes here, hello i am a message please read me</p>
 						</div>
 					</div>
 					<div className="map-card">
-						<img className="map-card-img" src={placeholder}></img>
+						<img className="map-card-img" src={placeholder} alt="placeholder"></img>
 						<div className="map-card-body">
 							<h5>Person Name</h5>
 							<p>message goes here, hello i am a message please read me</p>
