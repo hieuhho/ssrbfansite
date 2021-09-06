@@ -1,11 +1,11 @@
 const { Client } = require('pg')
 
 // const client = new Client({
-//   user: 'ssrbworld',
-//   password: 'shishiron',
-//   host: '178.70.88.224',
+//   user: process.env.DB_USER,
+//   password: process.env.DB_PASS
+//   host: process.env.DB_HOST,
 //   port: 5432,
-//   database: 'ssrbworld',
+//   database: process.env.DB_DATABASE,
 //   ssl: true
 // });
 // client.connect()
@@ -26,11 +26,10 @@ const { Client } = require('pg')
 const Sequelize = require('sequelize');
 
 const sequelize = new Sequelize({
-  database: "ssrbworld",
-  username: "ssrbworld",
-  password: "shishiron",
-  host: "178.70.88.224",
-  port: 5432,
+  database: process.env.DB_DATABASE,
+  username: process.env.DB_USER,
+  password: process.env.DB_PASS,
+  host: process.env.DB_HOST,
   dialect: "postgres",
   protocol: 'postgres',
   dialectOptions: {
