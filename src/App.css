@@ -4,12 +4,13 @@
 	--black: #1f1f1f;
 	--gray-100: #303030;
 	--gray-200: #3d3d3d;
+	--gray-600: hsl(0, 0%, 65%);
 	--slate-500: #6c7884;
 	--slate-300: #3d4d5c;
 	--slate-200: #1b2128;
 	--slate-100: #141a1f;
-	--bronze: #d1b487;
-	--gold: #e0c673;
+	--bronze-500: #d1b487;
+	--gold-500: #e0c673;
 }
 
 body {
@@ -46,7 +47,7 @@ p {
 }
 
 main {
-	min-height: calc(100vh - 6rem);
+	min-height: calc(100vh - 6rem - 2px);
 	max-width: 1440px;
 	margin: 0 auto;
 	position: relative;
@@ -117,7 +118,23 @@ a {
 .title {
 	font-size: 5rem;
 	letter-spacing: 4px;
-	padding: 1rem 0 2.5rem 0;
+	padding: 1.75rem 0 2.5rem 0;
+}
+
+.slant {
+	width: 100%;
+	height: 1.25rem;
+	fill: var(--gold-500);
+	display: block;
+}
+
+.slant.small {
+	height: 0.75rem;
+}
+
+.row {
+	display: flex;
+	flex-direction: row;
 }
 
 /* scrollbar */
@@ -200,16 +217,9 @@ a {
 	width: clamp(35ch, 100%, 55ch);
 }
 
-.slant {
-	width: 100%;
-	height: 1.25rem;
-	fill: var(--gold);
-	display: block;
-}
-
 .welcome-text {
 	color: var(--black);
-	background: var(--gold);
+	background: var(--gold-500);
 	padding: 1rem;
 	width: 100%;
 }
@@ -252,7 +262,7 @@ a {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	padding: 0 2rem;
+	padding: 0 2rem 2.5rem 2rem;
 }
 
 .project {
@@ -269,7 +279,7 @@ a {
 	box-shadow: 0 2px 0.2rem rgba(0, 0, 0, 0.3), 0 4px 0.4rem rgba(0, 0, 0, 0.3),
 		0 16px 0.8rem rgba(0, 0, 0, 0.3);
 
-	border: 2px solid var(--bronze);
+	border: 2px solid var(--bronze-500);
 	transition: border 350ms ease-out;
 }
 
@@ -314,7 +324,7 @@ a {
 	left: 0;
 	width: 100%;
 	height: 0.15rem;
-	background-color: var(--bronze);
+	background-color: var(--bronze-500);
 	margin-top: 0.5rem;
 	transition: transform 100ms ease-out;
 }
@@ -366,17 +376,48 @@ a {
 	display: grid;
 	grid-template-rows: auto;
 	width: 100%;
-	height: calc(100vh - 6rem);
+	height: calc(100vh - 6rem - 2px);
 }
 
 .map-sidebar {
-	background: var(--bronze);
+	background: var(--gray-200);
 	order: 1;
+}
+
+.map-sidebar-header {
+	padding: 0.5rem;
+	background: var(--gray-100);
+}
+
+.map-sidebar-header-title {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.map-hint {
+	margin-top: 0;
+	font-style: italic;
+	color: var(--gray-600);
+}
+
+.map-help-btn {
+	background: transparent;
+	border: none;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	margin-left: 0.5rem;
+}
+
+.map-sidebar-content {
+	padding: 0.5rem;
 }
 
 @media screen and (min-width: 960px) {
 	#map {
-		grid-template-columns: minmax(14rem, 25%) 1fr;
+		grid-template-columns: minmax(45ch, 25%) 1fr;
 	}
 	.map-sidebar {
 		order: unset;
