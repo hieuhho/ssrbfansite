@@ -62,40 +62,8 @@ main {
 		var(--gray-100) 75%,
 		var(--gray-100) 100%
 	);
+	padding: 0 0.5rem;
 	background-size: 56.57px 56.57px;
-}
-
-main::before,
-main::after {
-	content: "";
-	position: absolute;
-	top: 0;
-	height: 100%;
-	background-size: 100% 100%;
-	z-index: -1;
-}
-
-main::before {
-	width: 0.5rem;
-	background-color: #fff;
-	left: -0.5rem;
-}
-
-main::after {
-	width: 2.5rem;
-	right: -2.5rem;
-	background-image: linear-gradient(
-		90deg,
-		#ffffff 20%,
-		transparent 20%,
-		transparent 40%,
-		#ffffff 40%,
-		#ffffff 60%,
-		transparent 60%,
-		transparent 80%,
-		#ffffff 80%,
-		#ffffff 100%
-	);
 }
 
 main h1 {
@@ -110,9 +78,38 @@ a {
 	color: #fff;
 }
 
-@media screen and (max-width: 960px) {
-	main {
-		padding: 0 0.5rem;
+@media screen and (min-width: 1440px) {
+	main::before,
+	main::after {
+		content: "";
+		position: absolute;
+		top: 0;
+		height: 100%;
+		background-size: 100% 100%;
+		z-index: -1;
+	}
+
+	main::before {
+		width: 0.5rem;
+		background-color: #fff;
+		left: -0.5rem;
+	}
+
+	main::after {
+		width: 2.5rem;
+		right: -2.5rem;
+		background-image: linear-gradient(
+			90deg,
+			#ffffff 20%,
+			transparent 20%,
+			transparent 40%,
+			#ffffff 40%,
+			#ffffff 60%,
+			transparent 60%,
+			transparent 80%,
+			#ffffff 80%,
+			#ffffff 100%
+		);
 	}
 }
 
