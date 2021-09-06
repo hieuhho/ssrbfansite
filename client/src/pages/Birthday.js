@@ -107,7 +107,7 @@ const Birthday = () => {
 					<path fill="#303030" d="M0 0h1v1L0 0z" />
 				</svg>
 				<div className="map-sidebar-content">
-					<h4>New Zealand</h4>
+					<h4 className="map-location">New Zealand</h4>
 				</div>
 			</aside>
 

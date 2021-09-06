@@ -412,7 +412,19 @@ a {
 }
 
 .map-sidebar-content {
-	padding: 0.5rem;
+	padding: 0.5rem 1rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.map-location {
+	font-family: "Staatliches", cursive;
+	font-size: 1.75rem;
+	letter-spacing: 3px;
+	margin: 0.25em 0;
+	align-self: flex-start;
 }
 
 @media screen and (min-width: 960px) {
