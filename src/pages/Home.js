@@ -8,6 +8,16 @@ const Home = () => {
 			<div className="home-header">
 				<img className="welcome-header" src={title} alt="SHISHIRO BOTAN" />
 				<div className="welcome-text-wrapper">
+					<svg
+						id="slantTop"
+						data-name="slantTop"
+						class="slant top"
+						xmlns="http://www.w3.org/2000/svg"
+						preserveAspectRatio="none"
+						viewBox="0 0 56.47 52.35"
+					>
+						<polygon points="0 0 0 52.35 56.47 52.35 0 0" />
+					</svg>
 					<div className="welcome-text">
 						<h2>Welcome!</h2>
 						<p>
@@ -19,6 +29,16 @@ const Home = () => {
 							April.
 						</p>
 					</div>
+					<svg
+						id="slantBottom"
+						data-name="slantBottom"
+						class="slant bottom"
+						xmlns="http://www.w3.org/2000/svg"
+						viewBox="0 0 56.47 52.35"
+						preserveAspectRatio="none"
+					>
+						<polygon points="0 0 0 52.35 56.47 52.35 0 0" />
+					</svg>
 				</div>
 				<div className="botan-img-container">
 					<img
