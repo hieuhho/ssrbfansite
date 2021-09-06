@@ -8,7 +8,7 @@ function Navbar() {
 	const toggleDropdown = () => setDropdown(!dropdown);
 
 	return (
-		<nav>
+		<nav className={dropdown ? "nav__active" : ""}>
 			{/* Logo */}
 			<Link className="home-link" to="/">
 				<h3 className="nav-title">Shishiro Botan Fansite</h3>
