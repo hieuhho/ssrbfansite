@@ -117,6 +117,10 @@ nav {
 		display: none;
 	}
 
+	.nav__active {
+		position: relative;
+	}
+
 	.nav-menu {
 		position: static;
 		width: auto;
