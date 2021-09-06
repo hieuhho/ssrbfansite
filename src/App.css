@@ -182,6 +182,7 @@ a {
 .botan-img {
 	object-fit: contain;
 	width: 100%;
+	mix-blend-mode: color;
 }
 
 .welcome-text-wrapper {
