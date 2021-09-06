@@ -9,14 +9,13 @@ const Home = () => {
 				<img className="welcome-header" src={title} alt="SHISHIRO BOTAN" />
 				<div className="welcome-text-wrapper">
 					<svg
-						id="slantTop"
 						data-name="slantTop"
 						class="slant top"
 						xmlns="http://www.w3.org/2000/svg"
+						viewBox="0 0 1 1"
 						preserveAspectRatio="none"
-						viewBox="0 0 56.47 52.35"
 					>
-						<polygon points="0 0 0 52.35 56.47 52.35 0 0" />
+						<path d="M0 0v1h1L0 0z" />
 					</svg>
 					<div className="welcome-text">
 						<h2>Welcome!</h2>
@@ -30,14 +29,13 @@ const Home = () => {
 						</p>
 					</div>
 					<svg
-						id="slantBottom"
 						data-name="slantBottom"
 						class="slant bottom"
 						xmlns="http://www.w3.org/2000/svg"
-						viewBox="0 0 56.47 52.35"
+						viewBox="0 0 1 1"
 						preserveAspectRatio="none"
 					>
-						<polygon points="0 0 0 52.35 56.47 52.35 0 0" />
+						<path d="M0 0h1v1L0 0z" />
 					</svg>
 				</div>
 				<div className="botan-img-container">

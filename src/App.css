@@ -197,10 +197,6 @@ a {
 	display: block;
 }
 
-.slant.bottom {
-	transform: rotate(180deg);
-}
-
 .welcome-text {
 	color: var(--black);
 	background: var(--gold);
