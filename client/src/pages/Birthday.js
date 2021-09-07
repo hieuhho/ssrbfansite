@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { VectorMap } from "react-jvectormap";
 import $ from 'jquery';
 import Modal from "../Modal";
-import placeholder from "../images/placeholderSSRB.png";
 const { overwrite, getName } = require("country-list");
 overwrite([
 	{
@@ -60,7 +59,7 @@ const Birthday = () => {
 	// 	image: "",
 	// 	location: ""
 	// });
-	const [tweets, setTweets] = useState([]);
+	const [messages, setMessages] = useState([]);
 
 	const handleHover = (e, el, countryCode) => {
 		const fans = mapData[countryCode] ? mapData[countryCode] : 0;
@@ -83,7 +82,10 @@ const Birthday = () => {
 			});
 		}
 		getTweets(countryCode)
-		document.querySelectorAll(".jvectormap-tip").forEach((el) => el.removeAttribute('style'));
+		document.querySelectorAll(".jvectormap-tip").forEach((el) => {
+			el.removeAttribute('style')
+			el.innerHTML = ""
+		});
 	};
 
 	const getTweets = (countryCode) => {
@@ -91,8 +93,8 @@ const Birthday = () => {
 			url: '/fetch_tweets',
 			data: {country: countryCode},
 			error: ((err) => console.error('AJAX GET FAILED', err)),
-			success: ((tweets) => {
-				setTweets(tweets);
+			success: ((messages) => {
+				setMessages(messages);
 			}),
 		});
 	}
@@ -147,19 +149,16 @@ const Birthday = () => {
 				<div className="map-sidebar-content">
 					<h4 className="map-location">{country.cName}</h4>
 
-					<p>
-					{tweets.username ? <p>{tweets.username} </p>: null}
-					</p>
-
-					{tweets.map((tweet) => (
+					{messages ?
+						messages.map((message) => (
 						<div className="map-card">
-							<img className="map-card-img" src={tweet.image} alt="placeholder"></img>
+							<img className="map-card-img" src={message.image} alt="ssrbmin_img"></img>
 							<div className="map-card-body">
-								<h5>{tweet.username}</h5>
-								<p>{tweet.message}</p>
+								<h5>{message.username}</h5>
+								<p>{message.message}</p>
 							</div>
 						</div>
-      		))}
+      			)) : null}
 				</div>
 			</aside>
 
