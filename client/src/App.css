@@ -5,6 +5,7 @@
 	--gray-100: #303030;
 	--gray-200: #3d3d3d;
 	--gray-600: hsl(0, 0%, 65%);
+	--slate-600: #9da6af;
 	--slate-500: #6c7884;
 	--slate-300: #3d4d5c;
 	--slate-200: #1b2128;
@@ -44,7 +45,7 @@ h2 {
 }
 
 p {
-	line-height: 1.6;
+	line-height: 1.5;
 }
 
 main {
