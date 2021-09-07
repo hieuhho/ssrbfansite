@@ -306,8 +306,7 @@ a {
 }
 
 .project-heading {
-	width: max-content;
-	height: max-content;
+	align-self: flex-start;
 }
 
 .project img {
