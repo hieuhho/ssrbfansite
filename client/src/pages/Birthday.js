@@ -118,6 +118,7 @@ const Birthday = () => {
 	}, []);
 
 	const [sidebar, setSidebar] = useState(false);
+	const [lang, setLang] = useState("en");
 
 	return (
 		<div id="map">
@@ -224,26 +225,73 @@ const Birthday = () => {
 				}}
 			/>
 			<Modal onClose={() => setTip(false)} show={tip}>
-				<h3>Instructions:</h3>
-				<ol>
-					<li>Use the #SSRBworld hashtag on Twitter.</li>
-					<li>
-						Write the name of your selected country in English (using English
-						alphabet), followed by a message you want to share to Shishiro.
-					</li>
-					<li>
-						Share a picture of your SSRB with a background of a location of the
-						country you wrote in the tweet. You can use the{" "}
-						<a href="https://picrew.me/image_maker/1217551">SSRB Maker</a> or
-						your own drawing.
-					</li>
-				</ol>
-				<p>Submissions close when she reaches 1M subs.</p>
-				<p>Remember to write a nice or happy message!</p>
-				<p id="hint-text">
-					Disclaimer: Any negative, hurtful, NSFW, R18+ or controversial
-					messages will be removed from the map
-				</p>
+				{lang === "en" ? (
+					<>
+						<div className="help-modal-header">
+							<h3>Instructions:</h3>
+							{/* toggles language */}
+							<button
+								className="help-modal-header-toggle"
+								onClick={() => setLang(lang === "en" ? "jp" : "en")}
+							>
+								{lang === "en" ? "中文" : "EN"}
+							</button>
+						</div>
+						<ol>
+							<li>Use the #SSRBworld hashtag on Twitter.</li>
+							<li>
+								Write the name of your selected country in English (using
+								English alphabet), followed by a message you want to share to
+								Shishiro.
+							</li>
+							<li>
+								Share a picture of your SSRB with a background of a location of
+								the country you wrote in the tweet. You can use the{" "}
+								<a href="https://picrew.me/image_maker/1217551">SSRB Maker</a>{" "}
+								or your own drawing.
+							</li>
+						</ol>
+						<p>Submissions close when she reaches 1M subs.</p>
+						<p>Remember to write a nice or happy message!</p>
+						<p id="hint-text">
+							Disclaimer: Any negative, hurtful, NSFW, R18+ or controversial
+							messages will be removed from the map
+						</p>
+					</>
+				) : (
+					<>
+						<div className="help-modal-header">
+							<h3>Instructions (but in japanese):</h3>
+							{/* toggles language */}
+							<button
+								className="help-modal-header-toggle"
+								onClick={() => setLang(lang === "en" ? "jp" : "en")}
+							>
+								{lang === "en" ? "中文" : "EN"}
+							</button>
+						</div>
+						<ol>
+							<li>Yep this is really japanese</li>
+							<li>
+								Write the name of your selected country in English (using
+								English alphabet), followed by a message you want to share to
+								Shishiro.
+							</li>
+							<li>
+								Share a picture of your SSRB with a background of a location of
+								the country you wrote in the tweet. You can use the{" "}
+								<a href="https://picrew.me/image_maker/1217551">SSRB Maker</a>{" "}
+								or your own drawing.
+							</li>
+						</ol>
+						<p>Submissions close when she reaches 1M subs.</p>
+						<p>Remember to write a nice or happy message!</p>
+						<p id="hint-text">
+							Disclaimer: Any negative, hurtful, NSFW, R18+ or controversial
+							messages will be removed from the map
+						</p>
+					</>
+				)}
 			</Modal>
 			{/* <Modal
 				title={`${country.fans} SSRBmins from ${country.cName}`}

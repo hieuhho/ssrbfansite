@@ -72,6 +72,32 @@
 	color: var(--gray-600);
 }
 
+.help-modal-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.help-modal-header-toggle {
+	margin: 0.5rem;
+	padding: 0.4rem 1rem;
+	border: 1px solid var(--gold-500);
+	background-color: var(--black);
+	border-radius: 999px;
+	color: #fff;
+	cursor: pointer;
+	transition: background-color 250ms ease-out, transform 100ms ease-out;
+}
+
+.help-modal-header-toggle:hover {
+	background-color: var(--slate-500);
+	border: 2px solid var(--slate-600);
+}
+
+.help-modal-header-toggle:active {
+	transform: scale(0.95);
+}
+
 .modal-footer {
 	display: flex;
 	justify-content: flex-end;
