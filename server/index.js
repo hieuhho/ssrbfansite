@@ -27,6 +27,10 @@ const dataGen = (num = 10) => {
   return data;
 }
 
+app.get("/api", (req, res) => {
+  res.json({ message: "Hello from server!" });
+});
+
 app.get('/fetch_country', (req, res) => {
   let mapData = {}
   db.Country.findAll()
