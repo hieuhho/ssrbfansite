@@ -80,6 +80,7 @@ const Birthday = () => {
 			el.removeAttribute("style");
 			el.innerHTML = "";
 		});
+		setSidebar(true);
 	};
 
 	const handleImg = (url) => {
@@ -225,6 +226,7 @@ const Birthday = () => {
 					],
 				}}
 			/>
+			{/* Help modal */}
 			<Modal onClose={() => setTip(false)} show={tip}>
 				{lang === "en" ? (
 					<>
@@ -372,11 +374,6 @@ const Birthday = () => {
 					</>
 				)}
 			</Modal>
-			{/* <Modal
-				title={`${country.fans} SSRBmins from ${country.cName}`}
-				onClose={() => setShow(false)}
-				show={show}
-			></Modal> */}
 		</div>
 	);
 };
