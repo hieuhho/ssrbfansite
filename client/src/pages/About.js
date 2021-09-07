@@ -16,10 +16,10 @@ const About = () => {
 						</ul>
 					</section>
 				</div>
-				<sub>
+				<p className="credits-footer">
 					Note: This is strictly a fan site, we are not related to Cover Corp
 					nor Hololive in any way.
-				</sub>
+				</p>
 			</div>
 		</main>
 	);
