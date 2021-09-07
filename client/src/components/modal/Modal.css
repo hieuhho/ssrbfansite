@@ -1,56 +1,104 @@
 .modal {
-  position: fixed;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  transition: all 0.3s ease-in-out;
-  pointer-events: none;
-  overflow: hidden;
-  z-index: 9998;
+	position: fixed;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(157, 166, 175, 0.5);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	opacity: 0;
+	transition: all 0.3s ease-in-out;
+	pointer-events: none;
+	overflow: hidden;
+	z-index: 999;
 }
 
 .modal.enter-done {
-  opacity: 1;
-  pointer-events: visible;
+	opacity: 1;
+	pointer-events: visible;
 }
 
 .modal.exit {
-  opacity: 0;
+	opacity: 0;
 }
 
 .modal-content {
-  width: 50%;
-  background-color: #fff;
-  transition: all 0.3s ease-in-out;
-  transform: translateY(-200px);
-  color: green;
+	margin: 0.5rem;
+	width: 100%;
+	max-width: 60ch;
+	background-color: var(--black);
+	color: var(--bronze-500);
+	border: 2px solid var(--gold-500);
+	border-radius: 0.5rem;
+	transform: translateY(20%);
+	opacity: 0;
+	padding: 0 0.5rem 0.5rem 0.5rem;
+	transition: transform 350ms ease-out, opacity 350ms ease-out;
 }
 
 .modal.enter-done .modal-content {
-  transform: translateY(0);
+	transform: translateY(0);
+	opacity: 1;
 }
 
 .modal.exit .modal-content {
-  transform: translateY(-200px);
-}
-
-.modal-header,
-.modal-footer {
-  padding: 10px;
-}
-
-.modal-title {
-  margin: 0;
+	transform: translateY(-20%);
+	opacity: 0;
 }
 
 .modal-body {
-  padding: 10px;
-  border-top: 1px solid #eee;
-  border-bottom: 1px solid #eee;
+	margin-bottom: 0.5rem;
+}
+
+.modal ol {
+	padding-left: 1.25rem;
+}
+
+.modal li {
+	margin-bottom: 0.5rem;
+}
+
+.modal p {
+	margin-top: 0;
+	margin-bottom: 0rem;
+}
+
+#hint-text {
+	margin-top: 1rem;
+	font-size: 0.85rem;
+	font-style: italic;
+	color: var(--gray-600);
+}
+
+.modal-footer {
+	display: flex;
+	justify-content: flex-end;
+}
+
+.modal-button {
+	margin: 0.5rem;
+	padding: 0.4rem 1rem;
+	border: 2px solid var(--slate-500);
+	background-color: var(--slate-200);
+	border-radius: 0.5rem;
+	color: #fff;
+	cursor: pointer;
+	transition: background-color 250ms ease-out, transform 100ms ease-out;
+}
+
+.modal-button:hover {
+	background-color: var(--slate-500);
+	border: 2px solid var(--slate-600);
+}
+
+.modal-button:active {
+	transform: scale(0.95);
+}
+
+@media screen and (min-width: 960px) {
+	.modal-content {
+		padding: 0 1rem 0.5rem 1rem;
+	}
 }

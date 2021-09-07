@@ -201,9 +201,9 @@ const Birthday = () => {
 					],
 				}}
 			/>
-			<Modal title="Instructions" onClose={() => setTip(false)} show={tip}>
-				<p>Instructions:</p>
-				<ul>
+			<Modal onClose={() => setTip(false)} show={tip}>
+				<h3>Instructions:</h3>
+				<ol>
 					<li>Use the #SSRBworld hashtag on Twitter.</li>
 					<li>
 						Write the name of your selected country in English (using English
@@ -212,18 +212,13 @@ const Birthday = () => {
 					<li>
 						Share a picture of your SSRB with a background of a location of the
 						country you wrote in the tweet. You can use the{" "}
-						<a
-							href="https://picrew.me/image_maker/1217551"
-							style={{ textDecoration: "underline", color: "blue" }}
-						>
-							SSRB Maker
-						</a>{" "}
-						or your own drawing.
+						<a href="https://picrew.me/image_maker/1217551">SSRB Maker</a> or
+						your own drawing.
 					</li>
-				</ul>
+				</ol>
 				<p>Submissions close when she reaches 1M subs.</p>
 				<p>Remember to write a nice or happy message!</p>
-				<p>
+				<p id="hint-text">
 					Disclaimer: Any negative, hurtful, NSFW, R18+ or controversial
 					messages will be removed from the map
 				</p>
