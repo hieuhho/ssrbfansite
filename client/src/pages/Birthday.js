@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { VectorMap } from "react-jvectormap";
-import $ from "jquery";
+import axios from 'axios'
 import Modal from "../components/modal/Modal";
 const { overwrite, getName } = require("country-list");
 overwrite([
@@ -81,16 +81,6 @@ const Birthday = () => {
 		});
 	};
 
-	const getTweets = (countryCode) => {
-		$.post({
-			url: "/fetch_tweets",
-			data: { country: countryCode },
-			error: (err) => console.error("AJAX GET FAILED", err),
-			success: (messages) => {
-				setMessages(messages);
-			},
-		});
-	};
 
 	const handleImg = (url) => {
 		if (url.includes("drive.google")) {
@@ -101,15 +91,27 @@ const Birthday = () => {
 		return url;
 	};
 
+	const getTweets = (countryCode) => {
+		const url = "https://ssrb-query.herokuapp.com/fetch_tweets";
+		axios.post(url, {
+			country: countryCode
+		})
+			.then(db_messages => {
+				let messages = db_messages.data;
+				setMessages(messages);
+			})
+			.catch(err => console.log(err))
+	};
+
 	useEffect(() => {
 		const getCountries = () => {
-			$.get({
-				url: "/fetch_country",
-				error: (err) => console.error("AJAX GET FAILED", err),
-				success: (countries) => {
+			const url = "https://ssrb-query.herokuapp.com/fetch_country"
+			axios.get(url)
+				.then(locations => {
+					let countries = locations.data;
 					setMapData(countries);
-				},
-			});
+				})
+				.catch(err => console.log(err))
 		};
 		getCountries();
 	}, []);
@@ -153,7 +155,7 @@ const Birthday = () => {
 
 					{messages
 						? messages.map((message) => (
-								<div className="map-card">
+								<div key={message.username} className="map-card">
 									<img
 										className="map-card-img"
 										src={handleImg(message.image)}
