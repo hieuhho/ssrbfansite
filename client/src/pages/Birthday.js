@@ -51,9 +51,16 @@ const Birthday = () => {
 		cName: "Select Country",
 		fans: "",
 	});
-	const [show, setShow] = useState(false);
+	// const [show, setShow] = useState(false);
 	const [tip, setTip] = useState(false);
-	const [mapData, setMapData] = useState({})
+	const [mapData, setMapData] = useState({});
+	// const [tweets, setTweets] = useState({
+	// 	username: "",
+	// 	tweet: "",
+	// 	image: "",
+	// 	location: ""
+	// });
+	const [tweets, setTweets] = useState([]);
 
 	const handleHover = (e, el, countryCode) => {
 		const fans = mapData[countryCode] ? mapData[countryCode] : 0;
@@ -70,14 +77,25 @@ const Birthday = () => {
 			);
 		const formattedFans = formattedNumber(fanNums, 2);
 		if (fanNums !== 0) {
-			setShow(true);
 			setCountry({
 				cName: cName,
 				fans: formattedFans,
 			});
 		}
-		document.querySelectorAll(".jvectormap-tip").forEach((el) => el.remove());
+		getTweets(countryCode)
+		document.querySelectorAll(".jvectormap-tip").forEach((el) => el.removeAttribute('style'));
 	};
+
+	const getTweets = (countryCode) => {
+		$.post({
+			url: '/fetch_tweets',
+			data: {country: countryCode},
+			error: ((err) => console.error('AJAX GET FAILED', err)),
+			success: ((tweets) => {
+				setTweets(tweets);
+			}),
+		});
+	}
 
 	useEffect(() => {
 		const getCountries = () => {
@@ -88,7 +106,7 @@ const Birthday = () => {
 					setMapData(countries);
 				}),
 			});
-		}
+		};
 		getCountries()
 	}, []);
 
@@ -112,12 +130,14 @@ const Birthday = () => {
 						</button>
 					</div>
 					<p className="map-hint">
-						Click a country to see the number of SSRBmins
+						{country.fans ? `${country.fans} SSRBmins from ${country.cName}` : "Click a country to see the number of SSRBmins"
+						}
 					</p>
+
 				</div>
 				<svg
 					data-name="slantBottom"
-					class="slant small"
+					className="slant small"
 					xmlns="http://www.w3.org/2000/svg"
 					viewBox="0 0 1 1"
 					preserveAspectRatio="none"
@@ -126,34 +146,20 @@ const Birthday = () => {
 				</svg>
 				<div className="map-sidebar-content">
 					<h4 className="map-location">{country.cName}</h4>
-					<div className="map-card">
-						<img className="map-card-img" src={placeholder} alt="placeholder"></img>
-						<div className="map-card-body">
-							<h5>Person Name</h5>
-							<p>message goes here, hello i am a message please read me</p>
+
+					<p>
+					{tweets.username ? <p>{tweets.username} </p>: null}
+					</p>
+
+					{tweets.map((tweet) => (
+						<div className="map-card">
+							<img className="map-card-img" src={tweet.image} alt="placeholder"></img>
+							<div className="map-card-body">
+								<h5>{tweet.username}</h5>
+								<p>{tweet.message}</p>
+							</div>
 						</div>
-					</div>
-					<div className="map-card">
-						<img className="map-card-img" src={placeholder} alt="placeholder"></img>
-						<div className="map-card-body">
-							<h5>Person Name</h5>
-							<p>message goes here, hello i am a message please read me</p>
-						</div>
-					</div>
-					<div className="map-card">
-						<img className="map-card-img" src={placeholder} alt="placeholder"></img>
-						<div className="map-card-body">
-							<h5>Person Name</h5>
-							<p>message goes here, hello i am a message please read me</p>
-						</div>
-					</div>
-					<div className="map-card">
-						<img className="map-card-img" src={placeholder} alt="placeholder"></img>
-						<div className="map-card-body">
-							<h5>Person Name</h5>
-							<p>message goes here, hello i am a message please read me</p>
-						</div>
-					</div>
+      		))}
 				</div>
 			</aside>
 
@@ -190,11 +196,11 @@ const Birthday = () => {
 			<Modal title="Instructions" onClose={() => setTip(false)} show={tip}>
 				<p>Tweet this #SSRBWOrld</p>
 			</Modal>
-			<Modal
+			{/* <Modal
 				title={`${country.fans} SSRBmins from ${country.cName}`}
 				onClose={() => setShow(false)}
 				show={show}
-			></Modal>
+			></Modal> */}
 		</div>
 	);
 };

@@ -10,7 +10,7 @@ const Home = () => {
 				<div className="welcome-text-wrapper">
 					<svg
 						data-name="slantTop"
-						class="slant top"
+						className="slant top"
 						xmlns="http://www.w3.org/2000/svg"
 						viewBox="0 0 1 1"
 						preserveAspectRatio="none"
@@ -30,7 +30,7 @@ const Home = () => {
 					</div>
 					<svg
 						data-name="slantBottom"
-						class="slant bottom"
+						className="slant bottom"
 						xmlns="http://www.w3.org/2000/svg"
 						viewBox="0 0 1 1"
 						preserveAspectRatio="none"

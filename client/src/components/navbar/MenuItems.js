@@ -1,16 +1,16 @@
   export const MenuItems = [
   {
-    title: "Anniversary",
+    title: "SSRB Maker",
     img: "https://i.picsum.photos/id/230/400/900.jpg?hmac=AQI-uciC8LquKEeNWdA4W_SQkDjIIQmwfYb9HzFL7PU",
     desc: "Make your own SSRBmin",
-    path: "/anniversary",
+    path: "/ssrb_maker",
     cName: "dropdown-link"
   },
   {
-    title: "Birthday (SSRBWorld)",
+    title: "SSRB World",
     img: "https://i.picsum.photos/id/1039/400/900.jpg?hmac=K-7d_oihjW6jwBn8olpAFfhet_ISlyoTjh3sRVcSQDA",
     desc: "Tweet your SSRB around the world",
-    path: "/birthday",
+    path: "/ssrb_world",
     cName: "dropdown-link"
   },
   // {

@@ -2,6 +2,7 @@ const express = require('express');
 
 const app = express();
 const path = require('path');
+const faker = require('faker');
 const bodyParser = require('body-parser');
 const countries = require("i18n-iso-countries");
 
@@ -12,6 +13,19 @@ app.use(express.static(path.join(__dirname, '../client/build')));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+const dataGen = (num = 10) => {
+  data = []
+  for (let i = 0; i < num; i += 1) {
+    tweets = {
+      username: faker.internet.userName(),
+      message: faker.lorem.paragraphs(Math.random() * (3 - 1) + 1),
+      image: faker.random.image(),
+      location: faker.address.stateAbbr()
+    }
+    data.push(tweets)
+  }
+  return data;
+}
 
 app.get('/fetch_country', (req, res) => {
   let mapData = {}
@@ -32,6 +46,34 @@ app.get('/fetch_country', (req, res) => {
       res.status(500);
       res.end(err);
     });
+});
+
+app.post('/fetch_tweets', (req, res) => {
+  alpha2Location = req.body.country
+  let numbericLocation = parseInt(countries.alpha2ToNumeric(alpha2Location))
+  // db.Tweet.findAll({
+  //   where: {
+  //     location: numbericLocation
+  //   }
+  // })
+  //   .then((tweets_data) => {
+  //     tweets = JSON.parse(JSON.stringify(tweets_data))
+  // tweets ={
+  //   username: "snow",
+  //   message: "have fun",
+  //   image: "none",
+  //   location: 840
+  // }
+      data = dataGen()
+      // console.log('tweets: ', data);
+      res.status(200);
+      res.send(data);
+      res.end();
+    // })
+    // .catch((err) => {
+    //   res.status(500);
+    //   res.end(err);
+    // });
 });
 
 

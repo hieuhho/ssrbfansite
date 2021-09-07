@@ -30,8 +30,8 @@ function App() {
 				<Route exact path="/fanarts" component={Fanarts} />
 				<Route exact path="/about" component={About} />
 
-				<Route exact path="/anniversary" component={Anniversary} />
-				<Route exact path="/birthday" component={Birthday} />
+				<Route exact path="/ssrb_maker" component={Anniversary} />
+				<Route exact path="/ssrb_world" component={Birthday} />
 				<Route exact path="/taiwan" component={Taiwan} />
 
 
