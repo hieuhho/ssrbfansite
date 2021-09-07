@@ -247,7 +247,13 @@ const Birthday = () => {
 							<li>
 								Share a picture of your SSRB with a background of a location of
 								the country you wrote in the tweet. You can use the{" "}
-								<a href="https://picrew.me/image_maker/1217551">SSRB Maker</a>{" "}
+								<a
+									target="_blank"
+									rel="noreferrer"
+									href="https://picrew.me/image_maker/1217551"
+								>
+									SSRB Maker
+								</a>{" "}
 								or your own drawing.
 							</li>
 						</ol>
