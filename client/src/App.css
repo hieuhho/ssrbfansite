@@ -529,6 +529,9 @@ a {
 	.map-sidebar-content {
 		padding: 0.5rem 2rem;
 	}
+	.map-sidebar-toggle {
+		display: none;
+	}
 }
 
 #tw_iframe {
@@ -590,23 +593,22 @@ a {
 	}
 }
 
-
 #button_wrapper {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 .button_404 {
-	background-color: #4CAF50; /* Green */
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
+	background-color: #4caf50; /* Green */
+	border: none;
+	color: white;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
 }
 
 .cones_404 {
