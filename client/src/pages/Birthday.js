@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { VectorMap } from "react-jvectormap";
-import axios from 'axios'
+import axios from "axios";
 import Modal from "../components/modal/Modal";
 const { overwrite, getName } = require("country-list");
 overwrite([
@@ -81,7 +81,6 @@ const Birthday = () => {
 		});
 	};
 
-
 	const handleImg = (url) => {
 		if (url.includes("drive.google")) {
 			let imgID = url.split("=")[1];
@@ -93,32 +92,36 @@ const Birthday = () => {
 
 	const getTweets = (countryCode) => {
 		const url = "https://ssrb-query.herokuapp.com/fetch_tweets";
-		axios.post(url, {
-			country: countryCode
-		})
-			.then(db_messages => {
+		axios
+			.post(url, {
+				country: countryCode,
+			})
+			.then((db_messages) => {
 				let messages = db_messages.data;
 				setMessages(messages);
 			})
-			.catch(err => console.log(err))
+			.catch((err) => console.log(err));
 	};
 
 	useEffect(() => {
 		const getCountries = () => {
-			const url = "https://ssrb-query.herokuapp.com/fetch_country"
-			axios.get(url)
-				.then(locations => {
+			const url = "https://ssrb-query.herokuapp.com/fetch_country";
+			axios
+				.get(url)
+				.then((locations) => {
 					let countries = locations.data;
 					setMapData(countries);
 				})
-				.catch(err => console.log(err))
+				.catch((err) => console.log(err));
 		};
 		getCountries();
 	}, []);
 
+	const [sidebar, setSidebar] = useState(false);
+
 	return (
 		<div id="map">
-			<aside className="map-sidebar">
+			<aside className={sidebar ? "map-sidebar open" : "map-sidebar"}>
 				<div className="map-sidebar-header">
 					<div className="map-sidebar-header-title">
 						<h3>SSRB World Map</h3>
@@ -170,6 +173,25 @@ const Birthday = () => {
 						: null}
 				</div>
 			</aside>
+			<button
+				className="map-sidebar-toggle"
+				onClick={() => setSidebar(!sidebar)}
+			>
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					height="24px"
+					viewBox="0 0 24 24"
+					width="24px"
+					fill="#FFFFFF"
+					className={
+						sidebar ? "map-sidebar-toggle__open" : "map-sidebar-toggle__close"
+					}
+				>
+					{/* arrow left */}
+					<path d="M0 0h24v24H0V0z" fill="none" />
+					<path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z" />
+				</svg>
+			</button>
 
 			<VectorMap
 				map={"world_mill"}

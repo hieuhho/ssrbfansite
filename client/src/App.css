@@ -387,18 +387,55 @@ a {
 
 /* 
 	SSRB World Page
- */
+*/
 
 #map {
+	position: relative;
 	display: grid;
-	grid-template-rows: 100vh auto;
+	min-height: calc(100vh - 6rem - 2px);
 	width: 100%;
-	height: calc(100vh - 6rem - 2px);
+}
+
+.map-sidebar-toggle {
+	position: fixed;
+	bottom: 1rem;
+	right: 1rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 2.5rem;
+	height: 2.5rem;
+	border: none;
+	background: var(--gray-200);
+	border-radius: 999px;
+	border: 2px solid var(--bronze-500);
+	cursor: pointer;
+	z-index: 2;
+}
+
+.map-sidebar-toggle svg {
+	transition: transform 350ms ease-out;
+}
+
+.map-sidebar-toggle__close {
+	transform: rotate(180deg);
 }
 
 .map-sidebar {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
 	background: var(--gray-200);
-	order: 1;
+	overflow-y: scroll;
+	transform: translateX(-100%);
+	transition: transform 350ms ease-out;
+}
+
+.map-sidebar.open {
+	transform: translateX(0);
 }
 
 .map-sidebar-header {
@@ -478,10 +515,12 @@ a {
 	#map {
 		grid-template-columns: minmax(45ch, 25%) 1fr;
 		grid-template-rows: none;
+		height: calc(100vh - 6rem - 2px);
 	}
 	.map-sidebar {
+		position: static;
+		transform: none;
 		order: unset;
-		overflow-y: scroll;
 		height: calc(100vh - 6rem - 2px);
 	}
 	.map-sidebar-header {
