@@ -235,7 +235,7 @@ const Birthday = () => {
 								className="help-modal-header-toggle"
 								onClick={() => setLang(lang === "en" ? "jp" : "en")}
 							>
-								{lang === "en" ? "中文" : "EN"}
+								{lang === "en" ? "日本語" : "EN"}
 							</button>
 						</div>
 						<ol>
@@ -307,7 +307,7 @@ const Birthday = () => {
 								className="help-modal-header-toggle"
 								onClick={() => setLang(lang === "en" ? "jp" : "en")}
 							>
-								{lang === "en" ? "中文" : "EN"}
+								{lang === "en" ? "日本語" : "EN"}
 							</button>
 						</div>
 						<ol>
