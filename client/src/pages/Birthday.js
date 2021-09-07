@@ -190,7 +190,6 @@ const Birthday = () => {
 						sidebar ? "map-sidebar-toggle__open" : "map-sidebar-toggle__close"
 					}
 				>
-					{/* arrow left */}
 					<path d="M0 0h24v24H0V0z" fill="none" />
 					<path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z" />
 				</svg>
@@ -198,7 +197,7 @@ const Birthday = () => {
 
 			<VectorMap
 				map={"world_mill"}
-				backgroundColor="#0077be"
+				backgroundColor="#355e86"
 				onRegionTipShow={handleHover}
 				onRegionClick={handleClick}
 				containerClassName="world-map"
@@ -220,7 +219,7 @@ const Birthday = () => {
 					regions: [
 						{
 							values: mapData,
-							scale: ["#ffeda0", "#f03b20"],
+							scale: ["#dfc59f", "#ffc400"],
 							normalizeFunction: "polynomial",
 						},
 					],
