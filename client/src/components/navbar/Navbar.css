@@ -30,21 +30,6 @@ nav {
 	width: 100%;
 }
 
-.nav-title {
-	margin: 0 0 0 1rem;
-	white-space: nowrap;
-}
-
-.fa-leaf {
-	margin-left: 0.5rem;
-	font-size: 1.6rem;
-	color: greenyellow;
-}
-
-.fa-bars {
-	color: #fff;
-}
-
 .hamburger {
 	display: block;
 	cursor: pointer;

@@ -1,6 +1,10 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import botanForeground from "../images/botan.png";
 import title from "../images/botan.svg";
+import { MenuItems } from "../components/navbar/MenuItems";
+
+var latestProject = MenuItems[0];
 
 const Home = () => {
 	return (
@@ -46,8 +50,17 @@ const Home = () => {
 					/>
 				</div>
 			</div>
-			<section>
-				<h2 className="title">Current Project</h2>
+			<section class="latest-project">
+				<h2 className="subheading">Latest Project</h2>
+				<Link className="project" to={latestProject.path}>
+					<img src={latestProject.img} alt="project_img" />
+					<h2 className="project-heading">{latestProject.title}</h2>
+					<div className="project-body">
+						<div className="project-desc">
+							<p>{latestProject.desc}</p>
+						</div>
+					</div>
+				</Link>
 			</section>
 		</main>
 	);

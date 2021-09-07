@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import logo from "../../images/logo.svg";
 import "./Navbar.css";
 
 function Navbar() {
@@ -11,8 +12,7 @@ function Navbar() {
 		<nav className={dropdown ? "nav__active" : ""}>
 			{/* Logo */}
 			<Link className="home-link" to="/">
-				<h3 className="nav-title">Shishiro Botan Fansite</h3>
-				<i className="fas fa-leaf" />
+				<img className="logo" src={logo} alt="title" />
 			</Link>
 
 			{/* Hamburger Menu */}
