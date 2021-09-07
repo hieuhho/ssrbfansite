@@ -50,15 +50,8 @@ const Birthday = () => {
 		cName: "Select Country",
 		fans: "",
 	});
-	// const [show, setShow] = useState(false);
 	const [tip, setTip] = useState(false);
 	const [mapData, setMapData] = useState({});
-	// const [tweets, setTweets] = useState({
-	// 	username: "",
-	// 	tweet: "",
-	// 	image: "",
-	// 	location: ""
-	// });
 	const [messages, setMessages] = useState([]);
 
 	const handleHover = (e, el, countryCode) => {
@@ -97,6 +90,15 @@ const Birthday = () => {
 				setMessages(messages);
 			}),
 		});
+	}
+
+	const handleImg = (url) => {
+		if (url.includes("drive.google")) {
+			let imgID = url.split('=')[1]
+			let sharableID = `https://drive.google.com/uc?export=view&id=${imgID}`
+			return sharableID
+		}
+		return url
 	}
 
 	useEffect(() => {
@@ -152,7 +154,7 @@ const Birthday = () => {
 					{messages ?
 						messages.map((message) => (
 						<div className="map-card">
-							<img className="map-card-img" src={message.image} alt="ssrbmin_img"></img>
+							<img className="map-card-img" src={handleImg(message.image)} alt="ssrbmin_img"></img>
 							<div className="map-card-body">
 								<h5>{message.username}</h5>
 								<p>{message.tweet}</p>

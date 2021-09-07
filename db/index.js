@@ -3,10 +3,10 @@ const Sequelize = require('sequelize');
 const { DataTypes } = require("sequelize");
 
 const sequelize = new Sequelize({
-  database: process.env.DB_DATABASE || DB_DATABASE,
-  username: process.env.DB_USER || DB_USER,
-  password: process.env.DB_PASS || DB_PASS,
-  host: process.env.DB_HOST || DB_HOST,
+  database: process.env.DB_DATABASE || REACT_APP_DB_DATABASE,
+  username: process.env.DB_USER || REACT_APP_DB_USER,
+  password: process.env.DB_PASS || REACT_APP_DB_PASS,
+  host: process.env.DB_HOST || REACT_APP_DB_HOST,
   dialect: "postgres",
   protocol: 'postgres',
   dialectOptions: {
