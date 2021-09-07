@@ -2,7 +2,7 @@
   {
     title: "SSRB World",
     img: "https://i.picsum.photos/id/1039/400/900.jpg?hmac=K-7d_oihjW6jwBn8olpAFfhet_ISlyoTjh3sRVcSQDA",
-    desc: "Tweet your SSRB around the world",
+    desc: "Join the SSRB world map to show Shishiro the support of her fans around the world for her 1M subscribers milestone!",
     path: "/ssrb_world",
     cName: "dropdown-link"
   },

@@ -3,10 +3,10 @@ const Sequelize = require('sequelize');
 const { DataTypes } = require("sequelize");
 
 const sequelize = new Sequelize({
-  database: process.env.DB_DATABASE,
-  username: process.env.DB_USER,
-  password: process.env.DB_PASS,
-  host: process.env.DB_HOST,
+  database: process.env.DB_DATABASE || DB_DATABASE,
+  username: process.env.DB_USER || DB_USER,
+  password: process.env.DB_PASS || DB_PASS,
+  host: process.env.DB_HOST || DB_HOST,
   dialect: "postgres",
   protocol: 'postgres',
   dialectOptions: {
@@ -54,9 +54,6 @@ const Tweet = sequelize.define('tweet', {
 }, {
   timestamps: false
 });
-
-Country.hasMany(Tweet);
-Tweet.belongsTo(Country);
 
 Country.sync();
 Tweet.sync();

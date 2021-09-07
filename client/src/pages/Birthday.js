@@ -155,7 +155,7 @@ const Birthday = () => {
 							<img className="map-card-img" src={message.image} alt="ssrbmin_img"></img>
 							<div className="map-card-body">
 								<h5>{message.username}</h5>
-								<p>{message.message}</p>
+								<p>{message.tweet}</p>
 							</div>
 						</div>
       			)) : null}
@@ -193,7 +193,15 @@ const Birthday = () => {
 				}}
 			/>
 			<Modal title="Instructions" onClose={() => setTip(false)} show={tip}>
-				<p>Tweet this #SSRBWOrld</p>
+				<p>Instructions:</p>
+				<ul>
+					<li>Use the #SSRBworld hashtag on Twitter.</li>
+					<li>Write the name of your selected country in English (using English alphabet), followed by a message you want to share to Shishiro.</li>
+					<li>Share a picture of your SSRB with a background of a location of the country you wrote in the tweet. You can use the <a href="https://picrew.me/image_maker/1217551" style={{textDecoration: "underline", color:"blue"}}>SSRB Maker</a> or your own drawing.</li>
+				</ul>
+			<p>Submissions close when she reaches 1M subs.</p>
+			<p>Remember to write a nice or happy message!</p>
+			<p>Disclaimer: Any negative, hurtful, NSFW, R18+ or controversial messages will be removed from the map</p>
 			</Modal>
 			{/* <Modal
 				title={`${country.fans} SSRBmins from ${country.cName}`}

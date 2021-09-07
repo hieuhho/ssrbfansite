@@ -51,29 +51,22 @@ app.get('/fetch_country', (req, res) => {
 app.post('/fetch_tweets', (req, res) => {
   alpha2Location = req.body.country
   let numbericLocation = parseInt(countries.alpha2ToNumeric(alpha2Location))
-  // db.Tweet.findAll({
-  //   where: {
-  //     location: numbericLocation
-  //   }
-  // })
-  //   .then((tweets_data) => {
-  //     tweets = JSON.parse(JSON.stringify(tweets_data))
-  // tweets ={
-  //   username: "snow",
-  //   message: "have fun",
-  //   image: "none",
-  //   location: 840
-  // }
-      data = dataGen()
-      // console.log('tweets: ', data);
+  db.Tweet.findAll({
+    where: {
+      location: numbericLocation
+    }
+  })
+    .then((db_messages) => {
+      messages = JSON.parse(JSON.stringify(db_messages))
+      // data = dataGen()
       res.status(200);
-      res.send(data);
+      res.send(messages);
       res.end();
-    // })
-    // .catch((err) => {
-    //   res.status(500);
-    //   res.end(err);
-    // });
+    })
+    .catch((err) => {
+      res.status(500);
+      res.end(err);
+    });
 });
 
 
