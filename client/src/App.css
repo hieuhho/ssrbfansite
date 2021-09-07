@@ -4,10 +4,12 @@
 	--black: #1f1f1f;
 	--gray-100: #303030;
 	--gray-200: #3d3d3d;
-	--gray-600: hsl(0, 0%, 65%);
+	--gray-600: #a6a6a6;
+	--gray-800: hsl(0, 0%, 80%);
 	--slate-600: #9da6af;
 	--slate-500: #6c7884;
-	--slate-300: #3d4d5c;
+	--slate-400: #3d4d5c;
+	--slate-300: hsl(209, 20%, 25%);
 	--slate-200: #1b2128;
 	--slate-100: #141a1f;
 	--bronze-500: #d1b487;
@@ -496,4 +498,50 @@ a {
 	height: 100vh;
 	border: none;
 	display: block;
+}
+
+.credits {
+	display: flex;
+	flex-direction: column;
+	max-width: 42rem;
+	margin: auto;
+	background: var(--slate-300);
+	border-radius: 0.5rem;
+	border: var(--gold-700) solid 2px;
+	padding: 1.5rem 1rem;
+}
+
+.credits-body {
+	margin: 1rem 0;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 1rem;
+}
+
+.credits h2 {
+	margin: 0 0 1.5rem 0;
+	padding: 0;
+}
+
+.credits-body h4 {
+	font-size: 1.75rem;
+	margin: 0 0 1rem 0;
+}
+
+.credits-body ul {
+	margin: 0;
+	padding-left: 1rem;
+	list-style: none;
+}
+
+.credits-body ul li {
+	font-size: 1.1rem;
+	margin: 0.5rem 0;
+}
+
+.credits sub {
+	margin: 1rem 0;
+	font-size: 1rem;
+	font-style: italic;
+	color: var(--gray-800);
 }
