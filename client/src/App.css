@@ -617,5 +617,5 @@ a {
 }
 
 .cones_404 {
-	max-width: 30%;
+	width: clamp(10rem, 50%, 35rem);
 }
