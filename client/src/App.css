@@ -381,7 +381,7 @@ a {
 
 #map {
 	display: grid;
-	grid-template-rows: auto;
+	grid-template-rows: 100vh auto;
 	width: 100%;
 	height: calc(100vh - 6rem - 2px);
 }
@@ -389,8 +389,6 @@ a {
 .map-sidebar {
 	background: var(--gray-200);
 	order: 1;
-	overflow-y: scroll;
-	height: calc(100vh - 6rem - 2px);
 }
 
 .map-sidebar-header {
@@ -448,6 +446,7 @@ a {
 	width: 100%;
 	flex-shrink: 0;
 	margin-bottom: 2rem;
+	max-width: 45ch;
 }
 
 .map-card-img {
@@ -468,8 +467,17 @@ a {
 @media screen and (min-width: 960px) {
 	#map {
 		grid-template-columns: minmax(45ch, 25%) 1fr;
+		grid-template-rows: none;
 	}
 	.map-sidebar {
 		order: unset;
+		overflow-y: scroll;
+		height: calc(100vh - 6rem - 2px);
+	}
+	.map-sidebar-header {
+		padding: 0.5rem 2rem;
+	}
+	.map-sidebar-content {
+		padding: 0.5rem 2rem;
 	}
 }
