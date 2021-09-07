@@ -63,7 +63,6 @@ app.post('/fetch_tweets', (req, res) => {
     .then((db_messages) => {
       messages = JSON.parse(JSON.stringify(db_messages))
       // data = dataGen()
-      console.log('messages: ', messages);
       res.status(200);
       res.send(messages);
       res.end();

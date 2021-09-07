@@ -50,7 +50,7 @@ const Home = () => {
 					/>
 				</div>
 			</div>
-			<section class="latest-project">
+			<section className="latest-project">
 				<h2 className="subheading">Latest Project</h2>
 				<Link className="project" to={latestProject.path}>
 					<img src={latestProject.img} alt="project_img" />
