@@ -3,7 +3,7 @@ import React from "react";
 const Taiwan = () => {
 	return (
 		<main id="taiwan_anniversary">
-			<h1 className="taiwan">Hololive 5th Gen 1st Anniversary Texture Pack</h1>
+			<h1 className="title">Hololive 5th Gen 1st Anniversary Texture Pack</h1>
 			<iframe
 				id="tw_iframe"
 				title="nplb_mc"
