@@ -543,6 +543,32 @@ a {
 	display: block;
 }
 
+/*
+	videos page
+*/
+
+.player-wrapper {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	max-width: 75rem;
+	margin: auto;
+	aspect-ratio: 16/9;
+}
+
+@supports not (aspect-ratio: 16/9) {
+	.player-wrapper {
+		height: 0;
+		padding-bottom: 56.25%;
+		min-height: 45vh;
+	}
+}
+
+/* 
+	about page
+*/
+
 .credits {
 	display: flex;
 	flex-direction: column;
