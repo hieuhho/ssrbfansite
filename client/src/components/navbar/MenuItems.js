@@ -1,15 +1,15 @@
   export const MenuItems = [
   {
     title: "SSRB World",
-    img: "https://i.picsum.photos/id/1039/400/900.jpg?hmac=K-7d_oihjW6jwBn8olpAFfhet_ISlyoTjh3sRVcSQDA",
+    img: "https://i.imgur.com/pz8cWAM.png",
     desc: "Join the SSRB world map to show Shishiro the support of her fans around the world for her 1M subscribers milestone!",
     path: "/ssrb_world",
     cName: "dropdown-link"
   },
   {
-    title: "SSRB Maker",
-    img: "https://i.picsum.photos/id/230/400/900.jpg?hmac=AQI-uciC8LquKEeNWdA4W_SQkDjIIQmwfYb9HzFL7PU",
-    desc: "Make your own SSRBmin",
+    title: "First Anniversary Project",
+    img: "https://i.imgur.com/jOxacan.png",
+    desc: "Happy 1st anniversary Shishiron!",
     path: "/ssrb_maker",
     cName: "dropdown-link"
   },
@@ -22,8 +22,8 @@
   // },
   {
     title: "Taiwan Project",
-    img: "https://i.picsum.photos/id/308/400/900.jpg?hmac=K-lTXDPeU9ZwtQscSDdJnjsVC33kPHBXUNGCDmx2k04",
-    desc: "Under Construction",
+    img: "https://www.thefeatherstudio.com/assets/img/project-5thAnniversary/hololive5th.jpg",
+    desc: "NePoLaBo Minecraft Texture Pack",
     path: "/taiwan",
     cName: "dropdown-link"
   },
