@@ -26,6 +26,7 @@
 
 .modal-content {
 	margin: 0.5rem;
+	max-height: calc(100vh - 2rem);
 	width: 100%;
 	max-width: 60ch;
 	background-color: var(--black);
@@ -36,6 +37,7 @@
 	opacity: 0;
 	padding: 0 0.5rem 0.5rem 0.5rem;
 	transition: transform 350ms ease-out, opacity 350ms ease-out;
+	overflow-y: scroll;
 }
 
 .modal.enter-done .modal-content {
@@ -127,4 +129,28 @@
 	.modal-content {
 		padding: 0 1rem 0.5rem 1rem;
 	}
+}
+
+.help-modal-example-btn {
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
+	background: transparent;
+	border: none;
+	padding: 0;
+	border-bottom: 2px solid var(--gold-500);
+	margin-bottom: 0.5rem;
+	color: #fff;
+	cursor: pointer;
+}
+
+.help-example-tweet {
+	width: 100%;
+	height: 100%;
+	border-radius: 0.5rem;
+}
+
+.help-example-tweet.hidden {
+	width: 100%;
+	height: 0;
 }

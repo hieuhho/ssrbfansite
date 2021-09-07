@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { VectorMap } from "react-jvectormap";
 import axios from "axios";
 import Modal from "../components/modal/Modal";
+import exampleTweet from "../images/exampleTweet.jpg";
 const { overwrite, getName } = require("country-list");
 overwrite([
 	{
@@ -118,6 +119,7 @@ const Birthday = () => {
 	}, []);
 
 	const [sidebar, setSidebar] = useState(false);
+	const [showExampleTweet, setshowExampleTweet] = useState(false);
 	const [lang, setLang] = useState("en");
 
 	return (
@@ -241,8 +243,14 @@ const Birthday = () => {
 							<li>Use the #SSRBworld hashtag on Twitter.</li>
 							<li>
 								Write the name of your selected country in English (using
-								English alphabet), followed by a message you want to share to
-								Shishiro.
+								English alphabet) between square brackets, followed by a message
+								you want to share to Shishiro.
+								<p>
+									Example: <br />
+									[Japan]
+									<br />I love chilling at home watching Botan Streams!
+									#SSRBworld
+								</p>
 							</li>
 							<li>
 								Share a picture of your SSRB with a background of a location of
@@ -257,6 +265,33 @@ const Birthday = () => {
 								or your own drawing.
 							</li>
 						</ol>
+						{/* example tweet dropdown */}
+						<button
+							className="help-modal-example-btn"
+							onClick={() => setshowExampleTweet(!showExampleTweet)}
+						>
+							Click to show example tweet
+							<svg
+								className="help-modal-example-icon"
+								xmlns="http://www.w3.org/2000/svg"
+								height="24px"
+								viewBox="0 0 24 24"
+								width="24px"
+								fill="#FFFFFF"
+							>
+								<path d="M0 0h24v24H0V0z" fill="none" />
+								<path d="M7 10l5 5 5-5z" />
+							</svg>
+						</button>
+						<img
+							className={
+								showExampleTweet
+									? "help-example-tweet"
+									: "help-example-tweet hidden"
+							}
+							src={exampleTweet}
+							alt="example tweet"
+						/>
 						<p>Submissions close when she reaches 1M subs.</p>
 						<p>Remember to write a nice or happy message!</p>
 						<p id="hint-text">
@@ -280,16 +315,55 @@ const Birthday = () => {
 							<li>Yep this is really japanese</li>
 							<li>
 								Write the name of your selected country in English (using
-								English alphabet), followed by a message you want to share to
-								Shishiro.
+								English alphabet) between square brackets, followed by a message
+								you want to share to Shishiro.
+								<p>
+									Example: <br />
+									[Japan]
+									<br />I love chilling at home watching Botan Streams!
+									#SSRBworld
+								</p>
 							</li>
 							<li>
 								Share a picture of your SSRB with a background of a location of
 								the country you wrote in the tweet. You can use the{" "}
-								<a href="https://picrew.me/image_maker/1217551">SSRB Maker</a>{" "}
+								<a
+									target="_blank"
+									rel="noreferrer"
+									href="https://picrew.me/image_maker/1217551"
+								>
+									SSRB Maker
+								</a>{" "}
 								or your own drawing.
 							</li>
 						</ol>
+						{/* example tweet dropdown */}
+						<button
+							className="help-modal-example-btn"
+							onClick={() => setshowExampleTweet(!showExampleTweet)}
+						>
+							Click to show example tweet
+							<svg
+								className="help-modal-example-icon"
+								xmlns="http://www.w3.org/2000/svg"
+								height="24px"
+								viewBox="0 0 24 24"
+								width="24px"
+								fill="#FFFFFF"
+							>
+								<path d="M0 0h24v24H0V0z" fill="none" />
+								<path d="M7 10l5 5 5-5z" />
+							</svg>
+						</button>
+						<img
+							className={
+								showExampleTweet
+									? "help-example-tweet"
+									: "help-example-tweet hidden"
+							}
+							src={exampleTweet}
+							alt="example tweet"
+						/>
 						<p>Submissions close when she reaches 1M subs.</p>
 						<p>Remember to write a nice or happy message!</p>
 						<p id="hint-text">
