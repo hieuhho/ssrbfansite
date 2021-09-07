@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { VectorMap } from "react-jvectormap";
-import $ from 'jquery';
-import Modal from "../Modal";
+import $ from "jquery";
+import Modal from "../components/modal/Modal";
 const { overwrite, getName } = require("country-list");
 overwrite([
 	{
@@ -27,7 +27,7 @@ overwrite([
 
 const formattedNumber = (num, digits) => {
 	if (num <= 999) {
-		return num
+		return num;
 	}
 	const si = [
 		{ value: 1, symbol: "" },
@@ -66,7 +66,7 @@ const Birthday = () => {
 		const fanNums = parseInt(
 			mapData[countryCode] ? mapData[countryCode] : 0,
 			10
-			);
+		);
 		const formattedFans = formattedNumber(fanNums, 2);
 		if (fanNums !== 0) {
 			setCountry({
@@ -74,44 +74,44 @@ const Birthday = () => {
 				fans: formattedFans,
 			});
 		}
-		getTweets(countryCode)
+		getTweets(countryCode);
 		document.querySelectorAll(".jvectormap-tip").forEach((el) => {
-			el.removeAttribute('style')
-			el.innerHTML = ""
+			el.removeAttribute("style");
+			el.innerHTML = "";
 		});
 	};
 
 	const getTweets = (countryCode) => {
 		$.post({
-			url: '/fetch_tweets',
-			data: {country: countryCode},
-			error: ((err) => console.error('AJAX GET FAILED', err)),
-			success: ((messages) => {
+			url: "/fetch_tweets",
+			data: { country: countryCode },
+			error: (err) => console.error("AJAX GET FAILED", err),
+			success: (messages) => {
 				setMessages(messages);
-			}),
+			},
 		});
-	}
+	};
 
 	const handleImg = (url) => {
 		if (url.includes("drive.google")) {
-			let imgID = url.split('=')[1]
-			let sharableID = `https://drive.google.com/uc?export=view&id=${imgID}`
-			return sharableID
+			let imgID = url.split("=")[1];
+			let sharableID = `https://drive.google.com/uc?export=view&id=${imgID}`;
+			return sharableID;
 		}
-		return url
-	}
+		return url;
+	};
 
 	useEffect(() => {
 		const getCountries = () => {
 			$.get({
-				url: '/fetch_country',
-				error: ((err) => console.error('AJAX GET FAILED', err)),
-				success: ((countries) => {
+				url: "/fetch_country",
+				error: (err) => console.error("AJAX GET FAILED", err),
+				success: (countries) => {
 					setMapData(countries);
-				}),
+				},
 			});
 		};
-		getCountries()
+		getCountries();
 	}, []);
 
 	return (
@@ -134,10 +134,10 @@ const Birthday = () => {
 						</button>
 					</div>
 					<p className="map-hint">
-						{country.fans ? `${country.fans} SSRBmins from ${country.cName}` : "Click a country to see the number of SSRBmins"
-						}
+						{country.fans
+							? `${country.fans} SSRBmins from ${country.cName}`
+							: "Click a country to see the number of SSRBmins"}
 					</p>
-
 				</div>
 				<svg
 					data-name="slantBottom"
@@ -151,16 +151,21 @@ const Birthday = () => {
 				<div className="map-sidebar-content">
 					<h4 className="map-location">{country.cName}</h4>
 
-					{messages ?
-						messages.map((message) => (
-						<div className="map-card">
-							<img className="map-card-img" src={handleImg(message.image)} alt="ssrbmin_img"></img>
-							<div className="map-card-body">
-								<h5>{message.username}</h5>
-								<p>{message.tweet}</p>
-							</div>
-						</div>
-      			)) : null}
+					{messages
+						? messages.map((message) => (
+								<div className="map-card">
+									<img
+										className="map-card-img"
+										src={handleImg(message.image)}
+										alt="ssrbmin_img"
+									></img>
+									<div className="map-card-body">
+										<h5>{message.username}</h5>
+										<p>{message.tweet}</p>
+									</div>
+								</div>
+						  ))
+						: null}
 				</div>
 			</aside>
 
@@ -198,12 +203,28 @@ const Birthday = () => {
 				<p>Instructions:</p>
 				<ul>
 					<li>Use the #SSRBworld hashtag on Twitter.</li>
-					<li>Write the name of your selected country in English (using English alphabet), followed by a message you want to share to Shishiro.</li>
-					<li>Share a picture of your SSRB with a background of a location of the country you wrote in the tweet. You can use the <a href="https://picrew.me/image_maker/1217551" style={{textDecoration: "underline", color:"blue"}}>SSRB Maker</a> or your own drawing.</li>
+					<li>
+						Write the name of your selected country in English (using English
+						alphabet), followed by a message you want to share to Shishiro.
+					</li>
+					<li>
+						Share a picture of your SSRB with a background of a location of the
+						country you wrote in the tweet. You can use the{" "}
+						<a
+							href="https://picrew.me/image_maker/1217551"
+							style={{ textDecoration: "underline", color: "blue" }}
+						>
+							SSRB Maker
+						</a>{" "}
+						or your own drawing.
+					</li>
 				</ul>
-			<p>Submissions close when she reaches 1M subs.</p>
-			<p>Remember to write a nice or happy message!</p>
-			<p>Disclaimer: Any negative, hurtful, NSFW, R18+ or controversial messages will be removed from the map</p>
+				<p>Submissions close when she reaches 1M subs.</p>
+				<p>Remember to write a nice or happy message!</p>
+				<p>
+					Disclaimer: Any negative, hurtful, NSFW, R18+ or controversial
+					messages will be removed from the map
+				</p>
 			</Modal>
 			{/* <Modal
 				title={`${country.fans} SSRBmins from ${country.cName}`}
