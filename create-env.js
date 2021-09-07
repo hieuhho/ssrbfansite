@@ -1,4 +1,4 @@
 const fs = require('fs')
 fs.writeFileSync('./.env',
-`DB_HOST=${process.env.DB_HOST}\nDB_PASS=${process.env.DB_PASS}\nDB_USER=${process.env.DB_USER}\nDB_DATABASE=${process.env.DB_DATABASE}\n`
+`REACT_APP_DB_HOST=${process.env.DB_HOST}\nREACT_APP_DB_PASS=${process.env.DB_PASS}\nREACT_APP_DB_USER=${process.env.DB_USER}\nREACT_APP_DB_DATABASE=${process.env.DB_DATABASE}\n`
 );
