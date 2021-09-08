@@ -555,7 +555,7 @@ a {
 .video-container {
 	max-width: 75rem;
 	margin: auto;
-	margin-bottom: 4rem;
+	padding-bottom: 4rem;
 }
 
 .video-wrapper {
