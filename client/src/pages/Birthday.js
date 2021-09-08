@@ -110,6 +110,7 @@ const Birthday = () => {
 	};
 
 	useEffect(() => {
+		setTip(true);
 		const getCountries = () => {
 			const url = "https://ssrb-query.herokuapp.com/fetch_country";
 			axios
