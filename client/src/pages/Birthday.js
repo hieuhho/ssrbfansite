@@ -306,6 +306,7 @@ const Birthday = () => {
 						/>
 						<p>Submissions close when she reaches 1M subs.</p>
 						<p>Remember to write a nice or happy message!</p>
+						<p>Tweets may take up to 30 minutes to register in the map.</p>
 						<p id="hint-text">
 							Disclaimer: Any negative, hurtful, NSFW, R18+ or controversial
 							messages will be removed from the map
