@@ -3,6 +3,7 @@ import { VectorMap } from "react-jvectormap";
 import axios from "axios";
 import Modal from "../components/modal/Modal";
 import exampleTweet from "../images/exampleTweet.jpg";
+import exampleTweetJP from "../images/exampleTweetJP.jpg";
 const { overwrite, getName } = require("country-list");
 overwrite([
 	{
@@ -54,6 +55,9 @@ const Birthday = () => {
 	const [tip, setTip] = useState(false);
 	const [mapData, setMapData] = useState({});
 	const [messages, setMessages] = useState([]);
+	const [sidebar, setSidebar] = useState(false);
+	const [showExampleTweet, setshowExampleTweet] = useState(false);
+	const [lang, setLang] = useState("en");
 
 	const handleHover = (e, el, countryCode) => {
 		const fans = mapData[countryCode] ? mapData[countryCode] : 0;
@@ -118,10 +122,6 @@ const Birthday = () => {
 		};
 		getCountries();
 	}, []);
-
-	const [sidebar, setSidebar] = useState(false);
-	const [showExampleTweet, setshowExampleTweet] = useState(false);
-	const [lang, setLang] = useState("en");
 
 	return (
 		<div id="map">
@@ -303,7 +303,9 @@ const Birthday = () => {
 				) : (
 					<>
 						<div className="help-modal-header">
-							<h3>Instructions (but in japanese):</h3>
+							<h3>
+								登録者数100万人の突破を祝うためのSSRB世界地図企画に参加してししろんに応援しましょう！
+							</h3>
 							{/* toggles language */}
 							<button
 								className="help-modal-header-toggle"
@@ -312,32 +314,31 @@ const Birthday = () => {
 								{lang === "en" ? "日本語" : "EN"}
 							</button>
 						</div>
+						<h4>参加案内：</h4>
 						<ol>
-							<li>Yep this is really japanese</li>
+							<li>本企画はツイッターで行います。</li>
 							<li>
-								Write the name of your selected country in English (using
-								English alphabet) between square brackets, followed by a message
-								you want to share to Shishiro.
-								<p>
-									Example: <br />
-									[Japan]
-									<br />I love chilling at home watching Botan Streams!
-									#SSRBworld
-								</p>
+								カクカッコ[]の中に英語で自分の国の国名を書いて、その後に獅白ぼたんさんへのメッセージを書いてください。
 							</li>
 							<li>
-								Share a picture of your SSRB with a background of a location of
-								the country you wrote in the tweet. You can use the{" "}
+								自国にある場所の写真の中に自分のSSRBの画像を入れて、ツイートに追加してください。自分で描いたイラストも{" "}
 								<a
 									target="_blank"
 									rel="noreferrer"
 									href="https://picrew.me/image_maker/1217551"
 								>
-									SSRB Maker
+									SSRBメーカー
 								</a>{" "}
-								or your own drawing.
+								も使えます。
 							</li>
+							<li>
+								最後に、「#SSRBworld」のハッシュタグを付けてツイッターでつぶやいてください。
+							</li>
+							<li>100万人登録者を突破するまでに投稿を受け付けています。</li>
 						</ol>
+						<p>例：</p>
+						<p>[Japan]</p>
+						<p>家でだらだらしてぼたんの配信を見るのが大好きだ！ #SSRBworld</p>
 						{/* example tweet dropdown */}
 						<button
 							className="help-modal-example-btn"
@@ -362,14 +363,12 @@ const Birthday = () => {
 									? "help-example-tweet"
 									: "help-example-tweet hidden"
 							}
-							src={exampleTweet}
+							src={exampleTweetJP}
 							alt="example tweet"
 						/>
-						<p>Submissions close when she reaches 1M subs.</p>
-						<p>Remember to write a nice or happy message!</p>
+						<p>本人が喜ぶような内容のメッセージを書いてください！</p>
 						<p id="hint-text">
-							Disclaimer: Any negative, hurtful, NSFW, R18+ or controversial
-							messages will be removed from the map
+							注意：ネガティブなメッセージ、本人が傷つくようなメッセージ、センシティブな内容のメッセージ、論争を招くようなメッセージ、他にも害を及ぼしそうなメッセージは全部削除されます。
 						</p>
 					</>
 				)}
