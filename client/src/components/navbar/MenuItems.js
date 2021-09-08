@@ -7,6 +7,13 @@
     cName: "dropdown-link"
   },
   {
+    title: "ShishiRun",
+    img: "https://i.imgur.com/hXQcMi3.png",
+    desc: "Watame has kidnapped Lamy, and Botan needs to save her!",
+    path: "/shishirun",
+    cName: "dropdown-link"
+  },
+  {
     title: "First Anniversary Project",
     img: "https://i.imgur.com/jOxacan.png",
     desc: "Happy 1st anniversary Shishiron!",

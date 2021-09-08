@@ -29,6 +29,11 @@ function App() {
           <Redirect to="/" />
         </Route>
 				<Route exact path="/projects" component={Projects} />
+				<Route exact path="/shishirun" component={() => {
+						window.open("https://rachelbanana.itch.io/shishirun", "_blank");
+						window.location = '/projects'
+						return null;
+				}} />
 				<Route exact path="/videos" component={Videos} />
 				<Route exact path="/fanarts" component={UnderConstruction} />
 				<Route exact path="/about" component={About} />
