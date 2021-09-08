@@ -345,7 +345,7 @@ const Birthday = () => {
 							className="help-modal-example-btn"
 							onClick={() => setshowExampleTweet(!showExampleTweet)}
 						>
-							Click to show example tweet
+							こちらにクリックするとツイートの例が表示されます
 							<svg
 								className="help-modal-example-icon"
 								xmlns="http://www.w3.org/2000/svg"
