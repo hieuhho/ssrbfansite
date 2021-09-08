@@ -504,11 +504,11 @@ a {
 
 .map-card-img {
 	width: 100%;
+	border-bottom: #fff solid 2px;
 	object-fit: contain;
 }
 
 .map-card-body {
-	border-top: #fff solid 2px;
 	padding: 0.5rem;
 }
 
