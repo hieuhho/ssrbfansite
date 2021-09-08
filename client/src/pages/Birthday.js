@@ -1,10 +1,17 @@
-import React, { useState, useEffect } from "react";
-import { VectorMap } from "react-jvectormap";
+import React, { useState, useEffect, lazy, Suspense } from "react";
 import axios from "axios";
 import Modal from "../components/modal/Modal";
 import exampleTweet from "../images/exampleTweet.jpg";
 import exampleTweetJP from "../images/exampleTweetJP.jpg";
 const { overwrite, getName } = require("country-list");
+
+const VectorMap = lazy(() => import("../components/map/VectorMap.js"));
+const mapLoading = () => (
+	<div className="center">
+		<h2 className="subtitle">Loading...</h2>
+	</div>
+);
+
 overwrite([
 	{
 		code: "TW",
@@ -197,36 +204,38 @@ const Birthday = () => {
 				</svg>
 			</button>
 
-			<VectorMap
-				map={"world_mill"}
-				backgroundColor="#355e86"
-				onRegionTipShow={handleHover}
-				onRegionClick={handleClick}
-				containerClassName="world-map"
-				regionStyle={{
-					initial: {
-						fill: "#e4e4e4",
-						"fill-opacity": 0.9,
-						stroke: "none",
-						"stroke-width": 0,
-						"stroke-opacity": 0,
-					},
-					hover: {
-						"fill-opacity": 0.8,
-						cursor: "pointer",
-					},
-				}}
-				regionsSelectable={false}
-				series={{
-					regions: [
-						{
-							values: mapData,
-							scale: ["#dfc59f", "#ffc400"],
-							normalizeFunction: "polynomial",
+			<Suspense fallback={mapLoading()}>
+				<VectorMap
+					map={"world_mill"}
+					backgroundColor="#355e86"
+					onRegionTipShow={handleHover}
+					onRegionClick={handleClick}
+					containerClassName="world-map"
+					regionStyle={{
+						initial: {
+							fill: "#e4e4e4",
+							"fill-opacity": 0.9,
+							stroke: "none",
+							"stroke-width": 0,
+							"stroke-opacity": 0,
 						},
-					],
-				}}
-			/>
+						hover: {
+							"fill-opacity": 0.8,
+							cursor: "pointer",
+						},
+					}}
+					regionsSelectable={false}
+					series={{
+						regions: [
+							{
+								values: mapData,
+								scale: ["#dfc59f", "#ffc400"],
+								normalizeFunction: "polynomial",
+							},
+						],
+					}}
+				/>
+			</Suspense>
 			{/* Help modal */}
 			<Modal onClose={() => setTip(false)} show={tip}>
 				{lang === "en" ? (
