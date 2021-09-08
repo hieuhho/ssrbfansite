@@ -37,7 +37,7 @@
 	opacity: 0;
 	padding: 0 0.5rem 0.5rem 0.5rem;
 	transition: transform 350ms ease-out, opacity 350ms ease-out;
-	overflow-y: scroll;
+	overflow-y: auto;
 }
 
 .modal.enter-done .modal-content {
