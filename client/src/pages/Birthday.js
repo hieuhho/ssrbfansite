@@ -19,20 +19,6 @@ overwrite([
 	},
 ]);
 
-// const mapData = {
-// 	CN: 213451451,
-// 	ID: 213451451,
-// 	IN: 1311559204,
-// 	US: 331883986,
-// 	PK: 210797836,
-// 	BR: 210301591,
-// 	NG: 208679114,
-// 	BD: 161062905,
-// 	RU: 141944641,
-// 	MX: 127318112,
-// 	HK: 1389618778,
-// 	TW: 1389618778,
-// };
 
 const formattedNumber = (num, digits) => {
 	if (num <= 999) {
@@ -171,11 +157,11 @@ const Birthday = () => {
 					{messages
 						? messages.map((message) => (
 								<div key={message.username} className="map-card">
-									<img
+								{message.image ? <img
 										className="map-card-img"
 										src={handleImg(message.image)}
 										alt="ssrbmin_img"
-									></img>
+									></img> : null}
 									<div className="map-card-body">
 										<h5>{message.username}</h5>
 										<p>{message.tweet}</p>
