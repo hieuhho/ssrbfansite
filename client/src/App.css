@@ -146,6 +146,11 @@ a {
 	flex-direction: row;
 }
 
+.center {
+	display: grid;
+	place-items: center;
+}
+
 @media screen and (min-width: 960px) {
 	.title {
 		font-size: 5rem;
