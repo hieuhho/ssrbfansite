@@ -1,7 +1,7 @@
   export const MenuItems = [
   {
     title: "SSRB World",
-    img: "https://i.imgur.com/pz8cWAM.png",
+    img: "https://i.imgur.com/0PzcUBN.jpg",
     desc: "Join the SSRB world map to show Shishiro the support of her fans around the world for her 1M subscribers milestone!",
     path: "/ssrb_world",
     cName: "dropdown-link"
