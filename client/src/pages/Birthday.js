@@ -248,7 +248,8 @@ const Birthday = () => {
 								English alphabet) between square brackets, followed by a message
 								you want to share to Shishiro.
 								<p>
-									Example: <br />
+									Example:
+									<br />
 									[Japan]
 									<br />I love chilling at home watching Botan Streams!
 									#SSRBworld
@@ -320,6 +321,13 @@ const Birthday = () => {
 							<li>本企画はツイッターで行います。</li>
 							<li>
 								カクカッコ[]の中に英語で自分の国の国名を書いて、その後に獅白ぼたんさんへのメッセージを書いてください。
+								<p>
+									例：
+									<br />
+									[Japan]
+									<br />
+									家でだらだらしてぼたんの配信を見るのが大好きだ！ #SSRBworld
+								</p>
 							</li>
 							<li>
 								自国にある場所の写真の中に自分のSSRBの画像を入れて、ツイートに追加してください。自分で描いたイラストも{" "}
@@ -335,11 +343,7 @@ const Birthday = () => {
 							<li>
 								最後に、「#SSRBworld」のハッシュタグを付けてツイッターでつぶやいてください。
 							</li>
-							<li>100万人登録者を突破するまでに投稿を受け付けています。</li>
 						</ol>
-						<p>例：</p>
-						<p>[Japan]</p>
-						<p>家でだらだらしてぼたんの配信を見るのが大好きだ！ #SSRBworld</p>
 						{/* example tweet dropdown */}
 						<button
 							className="help-modal-example-btn"
@@ -367,6 +371,7 @@ const Birthday = () => {
 							src={exampleTweetJP}
 							alt="example tweet"
 						/>
+						<p>100万人登録者を突破するまでに投稿を受け付けています。</p>
 						<p>本人が喜ぶような内容のメッセージを書いてください！</p>
 						<p id="hint-text">
 							注意：ネガティブなメッセージ、本人が傷つくようなメッセージ、センシティブな内容のメッセージ、論争を招くようなメッセージ、他にも害を及ぼしそうなメッセージは全部削除されます。
