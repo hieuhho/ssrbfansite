@@ -3,7 +3,7 @@ import axios from "axios";
 import Modal from "../components/modal/Modal";
 import exampleTweet from "../images/exampleTweet.jpg";
 import exampleTweetJP from "../images/exampleTweetJP.jpg";
-const { overwrite, getName } = require("country-list");
+const { overwrite, getName, getCode } = require("country-list");
 
 const VectorMap = lazy(() => import("../components/map/VectorMap.js"));
 const mapLoading = () => (
@@ -17,6 +17,10 @@ overwrite([
 		code: "TW",
 		name: "Taiwan",
 	},
+	{
+		code: "RU",
+		name: "Russia",
+	}
 ]);
 
 
@@ -51,6 +55,7 @@ const Birthday = () => {
 	const [sidebar, setSidebar] = useState(false);
 	const [showExampleTweet, setshowExampleTweet] = useState(false);
 	const [lang, setLang] = useState("en");
+	const [search, setSearch] = useState("");
 
 	const handleHover = (e, el, countryCode) => {
 		const fans = mapData[countryCode] ? mapData[countryCode] : 0;
@@ -102,6 +107,23 @@ const Birthday = () => {
 			.catch((err) => console.log(err));
 	};
 
+	const handleSubmit = (e) => {
+		e.preventDefault();
+		const countryCode = getCode(search)
+		const fanNums = parseInt(
+			mapData[countryCode] ? mapData[countryCode] : 0,
+			10
+		);
+		const formattedFans = formattedNumber(fanNums, 2);
+		if (fanNums !== 0) {
+			setCountry({
+				cName: search,
+				fans: formattedFans,
+			});
+		}
+		getTweets(countryCode);
+}
+
 	useEffect(() => {
 		setTip(true);
 		const getCountries = () => {
@@ -138,10 +160,29 @@ const Birthday = () => {
 					</div>
 					<p className="map-hint">
 						{country.fans
-							? `${country.fans} SSRBmins from ${country.cName}`
+							? `${country.fans} SSRBmins from ${country.cName.charAt(0).toUpperCase() + country.cName.slice(1)}`
 							: "Click a country to see the number of SSRBmins"}
 					</p>
 				</div>
+
+				<div>
+        <form autoComplete="off" onSubmit={handleSubmit}>
+
+          <label className="searchBar">
+            <input
+              placeholder="Search..."
+              type="text"
+              name="country"
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+            />
+          </label>
+
+          <button type="button" className="searchSubmit" onClick={(e) => handleSubmit(e)}>Search</button>
+        </form>
+
+      </div>
+
 				<svg
 					data-name="slantBottom"
 					className="slant small"
