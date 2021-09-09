@@ -117,7 +117,7 @@ const Birthday = () => {
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		const countryCode = getCode(search)
+		const countryCode = getCode(search);
 		const fanNums = parseInt(
 			mapData[countryCode] ? mapData[countryCode] : 0,
 			10
@@ -184,25 +184,31 @@ const Birthday = () => {
 							? `${country.fans} SSRBmins from ${country.cName}`
 							: `${instructions}`}
 					</p>
+					<form
+						autoComplete="off"
+						onSubmit={handleSubmit}
+						className="search-bar"
+					>
+						<label>
+							<input
+								placeholder="Search..."
+								type="text"
+								className="search-input"
+								name="country"
+								value={search}
+								onChange={(e) => setSearch(e.target.value)}
+							/>
+						</label>
+
+						<button
+							type="button"
+							className="search-submit"
+							onClick={(e) => handleSubmit(e)}
+						>
+							Search
+						</button>
+					</form>
 				</div>
-
-				<div>
-        <form autoComplete="off" onSubmit={handleSubmit}>
-
-          <label className="searchBar">
-            <input
-              placeholder="Search..."
-              type="text"
-              name="country"
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
-            />
-          </label>
-
-          <button type="button" className="searchSubmit" onClick={(e) => handleSubmit(e)}>Search</button>
-        </form>
-
-      </div>
 
 				<svg
 					data-name="slantBottom"
