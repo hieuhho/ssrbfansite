@@ -115,8 +115,9 @@ const Birthday = () => {
 		);
 		const formattedFans = formattedNumber(fanNums, 2);
 		if (fanNums !== 0) {
+			let cName = search.toLowerCase().split(' ').map((s) => s.charAt(0).toUpperCase() + s.substring(1)).join(' ');
 			setCountry({
-				cName: search,
+				cName: cName,
 				fans: formattedFans,
 			});
 		}
@@ -159,7 +160,7 @@ const Birthday = () => {
 					</div>
 					<p className="map-hint">
 						{country.fans
-							? `${country.fans} SSRBmins from ${country.cName.charAt(0).toUpperCase() + country.cName.slice(1)}`
+							? `${country.fans} SSRBmins from ${country.cName}`
 							: "Click a country to see the number of SSRBmins"}
 					</p>
 				</div>
