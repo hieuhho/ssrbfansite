@@ -20,7 +20,7 @@ overwrite([
 	{
 		code: "RU",
 		name: "Russia",
-	}
+	},
 ]);
 
 const formattedNumber = (num, digits) => {
@@ -108,7 +108,7 @@ const Birthday = () => {
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		const countryCode = getCode(search)
+		const countryCode = getCode(search);
 		const fanNums = parseInt(
 			mapData[countryCode] ? mapData[countryCode] : 0,
 			10
@@ -121,7 +121,7 @@ const Birthday = () => {
 			});
 		}
 		getTweets(countryCode);
-}
+	};
 
 	useEffect(() => {
 		setTip(true);
@@ -159,28 +159,36 @@ const Birthday = () => {
 					</div>
 					<p className="map-hint">
 						{country.fans
-							? `${country.fans} SSRBmins from ${country.cName.charAt(0).toUpperCase() + country.cName.slice(1)}`
+							? `${country.fans} SSRBmins from ${
+									country.cName.charAt(0).toUpperCase() + country.cName.slice(1)
+							  }`
 							: "Click a country to see the number of SSRBmins"}
 					</p>
+					<form
+						autoComplete="off"
+						onSubmit={handleSubmit}
+						className="search-bar"
+					>
+						<label>
+							<input
+								placeholder="Search..."
+								type="text"
+								className="search-input"
+								name="country"
+								value={search}
+								onChange={(e) => setSearch(e.target.value)}
+							/>
+						</label>
+
+						<button
+							type="button"
+							className="search-submit"
+							onClick={(e) => handleSubmit(e)}
+						>
+							Search
+						</button>
+					</form>
 				</div>
-
-				<div>
-        <form autoComplete="off" onSubmit={handleSubmit}>
-
-          <label className="searchBar">
-            <input
-              placeholder="Search..."
-              type="text"
-              name="country"
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
-            />
-          </label>
-
-          <button type="button" className="searchSubmit" onClick={(e) => handleSubmit(e)}>Search</button>
-        </form>
-
-      </div>
 
 				<svg
 					data-name="slantBottom"
