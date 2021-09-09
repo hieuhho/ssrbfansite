@@ -23,7 +23,6 @@ overwrite([
 	}
 ]);
 
-
 const formattedNumber = (num, digits) => {
 	if (num <= 999) {
 		return num;
@@ -198,11 +197,13 @@ const Birthday = () => {
 					{messages
 						? messages.map((message) => (
 								<div key={message.username} className="map-card">
-								{message.image ? <img
-										className="map-card-img"
-										src={handleImg(message.image)}
-										alt="ssrbmin_img"
-									></img> : null}
+									{message.image ? (
+										<img
+											className="map-card-img"
+											src={handleImg(message.image)}
+											alt="ssrbmin_img"
+										></img>
+									) : null}
 									<div className="map-card-body">
 										<h5>{message.username}</h5>
 										<p>{message.tweet}</p>
@@ -333,6 +334,7 @@ const Birthday = () => {
 						/>
 						<p>Submissions close when she reaches 1M subs.</p>
 						<p>Remember to write a nice or happy message!</p>
+						<p>Tweets may take up to 30 minutes to register in the map.</p>
 						<p id="hint-text">
 							Disclaimer: Any negative, hurtful, NSFW, R18+ or controversial
 							messages will be removed from the map
@@ -409,6 +411,9 @@ const Birthday = () => {
 						/>
 						<p>100万人登録者を突破するまでに投稿を受け付けています。</p>
 						<p>本人が喜ぶような内容のメッセージを書いてください！</p>
+						<p>
+							ツイートが地図に現れるのが最大で30分ほどかかるかもしれません。
+						</p>
 						<p id="hint-text">
 							注意：ネガティブなメッセージ、本人が傷つくようなメッセージ、センシティブな内容のメッセージ、論争を招くようなメッセージ、他にも害を及ぼしそうなメッセージは全部削除されます。
 						</p>
