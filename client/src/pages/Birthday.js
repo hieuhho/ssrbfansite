@@ -115,8 +115,13 @@ const Birthday = () => {
 		);
 		const formattedFans = formattedNumber(fanNums, 2);
 		if (fanNums !== 0) {
+			let cName = search
+				.toLowerCase()
+				.split(" ")
+				.map((s) => s.charAt(0).toUpperCase() + s.substring(1))
+				.join(" ");
 			setCountry({
-				cName: search,
+				cName: cName,
 				fans: formattedFans,
 			});
 		}
