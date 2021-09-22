@@ -16,19 +16,23 @@ overwrite([
 	{
 		code: "TW",
 		name: "Taiwan",
-	},{
+	},
+	{
 		code: "RU",
 		name: "Russia",
-	},{
+	},
+	{
 		code: "BO",
 		name: "Bolivia",
-	},{
+	},
+	{
 		code: "KR",
-		name: "South Korea"
-	},{
+		name: "South Korea",
+	},
+	{
 		code: "KP",
-		name: "North Korea"
-	}
+		name: "North Korea",
+	},
 ]);
 
 const formattedNumber = (num, digits) => {
@@ -63,7 +67,9 @@ const Birthday = () => {
 	const [showExampleTweet, setshowExampleTweet] = useState(false);
 	const [lang, setLang] = useState("en");
 	const [search, setSearch] = useState("");
-	const [instructions, setInstructions] = useState("Click a country to see the number of SSRBmins");
+	const [instructions, setInstructions] = useState(
+		"Click a country to see the number of SSRBmins"
+	);
 
 	const handleHover = (e, el, countryCode) => {
 		const fans = mapData[countryCode] ? mapData[countryCode] : 0;
@@ -86,9 +92,9 @@ const Birthday = () => {
 			});
 		}
 		getTweets(countryCode);
-		document.querySelectorAll(".jvectormap-tip").forEach((el) => {
-			el.removeAttribute("style");
-			el.innerHTML = "";
+		let tips = document.querySelectorAll(".jvectormap-tip");
+		tips.forEach((tip) => {
+			tip.remove();
 		});
 		setSidebar(true);
 	};
@@ -121,11 +127,15 @@ const Birthday = () => {
 		const fanNums = parseInt(
 			mapData[countryCode] ? mapData[countryCode] : 0,
 			10
-			);
+		);
 		const formattedFans = formattedNumber(fanNums, 2);
 		if (fanNums !== 0) {
 			getTweets(countryCode);
-			let cName = search.toLowerCase().split(' ').map((s) => s.charAt(0).toUpperCase() + s.substring(1)).join(' ');
+			let cName = search
+				.toLowerCase()
+				.split(" ")
+				.map((s) => s.charAt(0).toUpperCase() + s.substring(1))
+				.join(" ");
 			setCountry({
 				cName: cName,
 				fans: formattedFans,
@@ -135,15 +145,15 @@ const Birthday = () => {
 				cName: "Select Country",
 				fans: "",
 			});
-			setInstructions(`Cannot find ${search}. Try again`)
+			setInstructions(`Cannot find ${search}. Try again`);
 		} else {
 			setCountry({
 				cName: "Select Country",
 				fans: "",
 			});
-			setInstructions("No SSRBmins :(")
+			setInstructions("No SSRBmins :(");
 		}
-}
+	};
 
 	useEffect(() => {
 		setTip(true);
@@ -158,6 +168,12 @@ const Birthday = () => {
 				.catch((err) => console.log(err));
 		};
 		getCountries();
+		return () => {
+			let tips = document.querySelectorAll(".jvectormap-tip");
+			tips.forEach((tip) => {
+				tip.remove();
+			});
+		};
 	}, []);
 
 	return (
