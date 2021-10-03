@@ -15,7 +15,7 @@ const TaiwanMessages = () => {
 
 			<div className="taiwan-messages-grid">
 				{imagesArr.map((image, index) => (
-					<LazyLoad height={400}>
+					<LazyLoad height={400} once>
 						<img key={index} src={image} alt="fanletter"></img>
 					</LazyLoad>
 				))}
