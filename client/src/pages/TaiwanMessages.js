@@ -1,4 +1,5 @@
 import React from "react";
+import LazyLoad from "react-lazyload";
 
 const imagesArr = [];
 for (let i = 1; i <= 56; i += 1) {
@@ -14,7 +15,9 @@ const TaiwanMessages = () => {
 
 			<div className="taiwan-messages-grid">
 				{imagesArr.map((image, index) => (
-					<img key={index} src={image} alt="fanletter"></img>
+					<LazyLoad height={400}>
+						<img key={index} src={image} alt="fanletter"></img>
+					</LazyLoad>
 				))}
 			</div>
 		</main>
