@@ -4,7 +4,9 @@ import LazyLoad from "react-lazyload";
 const imagesArr = [];
 for (let i = 1; i <= 56; i += 1) {
 	imagesArr.push(
-		`https://fanletter.s3.us-west-1.amazonaws.com/${`00${i}`.slice(-3)}.png`
+		`https://fanletter.s3.us-west-1.amazonaws.com/webp/${`00${i}`.slice(
+			-3
+		)}.webp`
 	);
 }
 
