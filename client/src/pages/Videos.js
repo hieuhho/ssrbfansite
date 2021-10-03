@@ -3,7 +3,7 @@ import React from "react";
 const Videos = () => {
 	return (
 		<main>
-			<h1 className="subheading">Videos</h1>
+			<h1 className="title">Videos</h1>
 			<div className="video-container">
 				<div className="video-wrapper">
 					<iframe

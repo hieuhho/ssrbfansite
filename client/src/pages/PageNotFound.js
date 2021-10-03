@@ -1,19 +1,20 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 
 const PageNotFound = () => {
 	return (
-		<main>
-			<h1 className="milestone">Page Not Found</h1>
-			<br />
-			<div id="button_wrapper">
-  			<button className="button_404" type="button">
-					<Link to="/">Go Home</Link>
+		<main id="construction">
+			<h1 className="subheading">Page Not Found</h1>
+			<Link to="/">
+				<button className="button_404" type="button">
+					Go Home
 				</button>
-			</div>
-			<p style={{textAlign:"center"}}>
-			<img className="cones_404" src="https://i.imgur.com/qIufhof.png" alt="404_cones"/>
-      </p>
+			</Link>
+			<img
+				className="cones_404"
+				src="https://i.imgur.com/qIufhof.png"
+				alt="404_cones"
+			/>
 		</main>
 	);
 };

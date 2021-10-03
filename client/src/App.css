@@ -83,6 +83,11 @@ a {
 	color: #fff;
 }
 
+img {
+	display: block;
+	max-width: 100%;
+}
+
 @media screen and (min-width: 1440px) {
 	main::before,
 	main::after {
@@ -686,6 +691,22 @@ a {
 	}
 }
 
+/* 
+	Taiwan Page
+*/
+
+.taiwan-messages-grid {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 0.5rem;
+}
+
+@media screen and (min-width: 960px) {
+	.taiwan-messages-grid {
+		grid-template-columns: 1fr 1fr;
+	}
+}
+
 /*
 	404 page
 */
@@ -710,4 +731,5 @@ a {
 
 .cones_404 {
 	width: clamp(10rem, 50%, 35rem);
+	margin: 0 auto;
 }

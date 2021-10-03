@@ -10,13 +10,11 @@ const UnderConstruction = () => {
 					Go Home
 				</button>
 			</Link>
-			<p style={{ textAlign: "center" }}>
-				<img
-					className="cones_404"
-					src="https://i.imgur.com/qIufhof.png"
-					alt="404_cones"
-				/>
-			</p>
+			<img
+				className="cones_404"
+				src="https://i.imgur.com/qIufhof.png"
+				alt="404_cones"
+			/>
 		</main>
 	);
 };
