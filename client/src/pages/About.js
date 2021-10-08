@@ -34,7 +34,7 @@ const About = () => {
 						<h4>Website:</h4>
 						<ul>
 							<li>Definitely not Loli Potato</li>
-							<li>Snow Snow Snow</li>
+							<li>SnowHeronLP</li>
 							<li>Matthew Tao</li>
 						</ul>
 					</section>
