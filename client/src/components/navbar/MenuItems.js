@@ -7,6 +7,13 @@
     cName: "dropdown-link"
   },
   {
+    title: "Taiwan 1M Milestone Projects",
+    img: "https://i.imgur.com/WN0JVGX.png",
+    desc: "Fan messages, Bustan, and more from the Taiwanese bros!",
+    path: "/taiwan_projects",
+    cName: "dropdown-link"
+  },
+  {
     title: "ShishiRun",
     img: "https://i.imgur.com/hXQcMi3.png",
     desc: "Watame has kidnapped Lamy, and Botan needs to save her!",
@@ -27,13 +34,7 @@
   //   path: "/milestone",
   //   cName: "dropdown-link"
   // },
-  {
-    title: "Taiwan Project",
-    img: "https://www.thefeatherstudio.com/assets/img/project-5thAnniversary/hololive5th.jpg",
-    desc: "NePoLaBo Minecraft Texture Pack",
-    path: "/taiwan",
-    cName: "dropdown-link"
-  },
+
   // {
   //   title: "English Project",
   //   img: "https://i.picsum.photos/id/863/400/900.jpg?hmac=zA6xx7JLzZjgRXHNsdB2ZQXIou3lZx70mI92i-yrKns",

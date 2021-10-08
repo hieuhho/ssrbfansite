@@ -4,7 +4,8 @@ import { Link } from "react-router-dom";
 const UnderConstruction = () => {
 	return (
 		<main id="construction">
-			<h1 className="subheading">Under Construction</h1>
+			<h1 className="subheading">This Page Is Not Ready Yet!</h1>
+			<h1 className="subheading">Check Back Soon!</h1>
 			<Link to="/">
 				<button className="button_404" type="button">
 					Go Home

@@ -19,7 +19,7 @@ import UnderConstruction from "./pages/UnderConstruction";
 
 // import Fanarts from "./pages/Fanarts";
 import Taiwan from "./pages/Taiwan";
-import TaiwanMessages from "./pages/TaiwanMessages";
+import FanMessages from "./pages/FanMessages";
 // import Activity from "./pages/Activity";
 // import Milestone from "./pages/Milestone";
 // import English from "./pages/English";
@@ -50,17 +50,18 @@ function App() {
 
 				<Route exact path="/ssrb_maker" component={Anniversary} />
 				<Route exact path="/ssrb_world" component={Birthday} />
-				<Route exact path="/taiwan2" component={Taiwan} />
-				<Route exact path="/taiwan_messages" component={TaiwanMessages} />
+				<Route exact path="/taiwan_projects" component={Taiwan} />
+				<Route exact path="/ssrb_sings" component={UnderConstruction} />
+				<Route exact path="/fan_letters" component={FanMessages} />
 				<Route
 					exact
-					path="/taiwan"
+					path="/texture_pack"
 					component={() => {
 						window.open(
 							"https://www.thefeatherstudio.com/mcrp_holo5th_anniversity.html?locale=en",
 							"_blank"
 						);
-						window.location = "/projects";
+						window.location = "/taiwan_projects";
 						return null;
 					}}
 				/>
@@ -72,7 +73,7 @@ function App() {
 							"https://twitter.com/hashtag/%E3%81%97%E3%81%97%E3%82%8D%E3%82%93%E7%99%BE%E4%B8%87%E6%B5%B7%E5%A4%96%E8%A8%98%E5%BF%B5?src=hashtag_click",
 							"_blank"
 						);
-						window.location = "/projects";
+						window.location = "/taiwan_projects";
 						return null;
 					}}
 				/>
