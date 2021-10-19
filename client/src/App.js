@@ -21,7 +21,7 @@ import UnderConstruction from "./pages/UnderConstruction";
 import Taiwan from "./pages/Taiwan";
 import FanMessages from "./pages/FanMessages";
 // import Activity from "./pages/Activity";
-// import Milestone from "./pages/Milestone";
+import Milestone from "./pages/Milestone";
 // import English from "./pages/English";
 // import Population from "./pages/Population"
 
@@ -51,7 +51,7 @@ function App() {
 				<Route exact path="/ssrb_maker" component={Anniversary} />
 				<Route exact path="/ssrb_world" component={Birthday} />
 				<Route exact path="/taiwan_projects" component={Taiwan} />
-				<Route exact path="/ssrb_sings" component={UnderConstruction} />
+				<Route exact path="/milestone_song" component={Milestone} />
 				<Route exact path="/fan_letters" component={FanMessages} />
 				<Route
 					exact

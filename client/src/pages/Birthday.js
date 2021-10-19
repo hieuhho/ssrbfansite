@@ -35,6 +35,56 @@ overwrite([
 	},
 ]);
 
+const tweetsNumberByCountry = {
+	"FI": 2,
+	"CZ": 1,
+	"PE": 1,
+	"PR": 1,
+	"HK": 3,
+	"ID": 10,
+	"KH": 1,
+	"PT": 1,
+	"PL": 1,
+	"BO": 1,
+	"AM": 1,
+	"KR": 1,
+	"CL": 8,
+	"AT": 3,
+	"BN": 1,
+	"LV": 1,
+	"VN": 7,
+	"AR": 1,
+	"SV": 1,
+	"NZ": 1,
+	"GB": 4,
+	"UA": 4,
+	"RU": 39,
+	"NO": 2,
+	"MX": 5,
+	"ZA": 2,
+	"CO": 7,
+	"DE": 3,
+	"JP": 27,
+	"RO": 1,
+	"AU": 6,
+	"FR": 3,
+	"HU": 2,
+	"US": 19,
+	"TW": 16,
+	"IN": 2,
+	"BR": 6,
+	"PH": 13,
+	"ES": 1,
+	"MM": 1,
+	"TH": 1,
+	"MY": 9,
+	"NL": 1,
+	"CA": 1,
+	"IT": 1,
+	"KZ": 2,
+	"SG": 2
+}
+
 const formattedNumber = (num, digits) => {
 	if (num <= 999) {
 		return num;
@@ -61,7 +111,7 @@ const Birthday = () => {
 		fans: "",
 	});
 	const [tip, setTip] = useState(false);
-	const [mapData, setMapData] = useState({});
+	const [mapData, setMapData] = useState(tweetsNumberByCountry);
 	const [messages, setMessages] = useState([]);
 	const [sidebar, setSidebar] = useState(false);
 	const [showExampleTweet, setshowExampleTweet] = useState(false);
@@ -157,17 +207,6 @@ const Birthday = () => {
 
 	useEffect(() => {
 		setTip(true);
-		const getCountries = () => {
-			const url = "https://ssrb-query.herokuapp.com/fetch_country";
-			axios
-				.get(url)
-				.then((locations) => {
-					let countries = locations.data;
-					setMapData(countries);
-				})
-				.catch((err) => console.log(err));
-		};
-		getCountries();
 		return () => {
 			let tips = document.querySelectorAll(".jvectormap-tip");
 			tips.forEach((tip) => {

@@ -36,12 +36,12 @@ const Taiwan = () => {
 
 			{/* SSRB SINGS */}
 			<div className="projects-container">
-				<Link className="project" to="/ssrb_sings">
-					<img src="https://i.imgur.com/OFCyfeS.png" alt="project_img" />
-					<h2 className="project-heading">SSRB Sings</h2>
+				<Link className="project" to="/milestone_song">
+					<img src="https://i.imgur.com/bkQ322I.png" alt="project_img" />
+					<h2 className="project-heading">Milestone Song PV</h2>
 					<div className="project-body">
 						<div className="project-desc">
-							<p>We got together and sing 🎶</p>
+							<p>1 Million Commemorative Video</p>
 						</div>
 					</div>
 				</Link>
