@@ -111,7 +111,6 @@ const Birthday = () => {
 		fans: "",
 	});
 	const [tip, setTip] = useState(false);
-	const [mapData, setMapData] = useState(tweetsNumberByCountry);
 	const [messages, setMessages] = useState([]);
 	const [sidebar, setSidebar] = useState(false);
 	const [showExampleTweet, setshowExampleTweet] = useState(false);
@@ -120,6 +119,8 @@ const Birthday = () => {
 	const [instructions, setInstructions] = useState(
 		"Click a country to see the number of SSRBmins"
 	);
+
+	const mapData = tweetsNumberByCountry
 
 	const handleHover = (e, el, countryCode) => {
 		const fans = mapData[countryCode] ? mapData[countryCode] : 0;
