@@ -3,7 +3,7 @@ import React from "react";
 const Milestone = () => {
 	return (
 		<main>
-			<h1 className="title">Botan Milestone Song PV</h1>
+			<h1 className="title">Milestone Song PV</h1>
 			<div className="video-container">
 				<div className="video-wrapper">
 					<iframe
