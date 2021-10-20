@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { VectorMap } from "react-jvectormap";
 
-import Modal from "../Modal";
+import Modal from "../../components/modal/Modal";
 const { overwrite, getName } = require("country-list");
 overwrite([
 	{

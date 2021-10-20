@@ -1,11 +1,13 @@
 import React, { useState, useEffect, lazy, Suspense } from "react";
-import axios from "axios";
-import Modal from "../components/modal/Modal";
-import exampleTweet from "../images/exampleTweet.jpg";
-import exampleTweetJP from "../images/exampleTweetJP.jpg";
+import iso_countries from "i18n-iso-countries";
+import Modal from "../../components/modal/Modal";
+import exampleTweet from "../../images/exampleTweet.jpg";
+import exampleTweetJP from "../../images/exampleTweetJP.jpg";
+import tweetsData from "./ssrbworld_tweets_db.json"
+
 const { overwrite, getName, getCode } = require("country-list");
 
-const VectorMap = lazy(() => import("../components/map/VectorMap.js"));
+const VectorMap = lazy(() => import("../../components/map/VectorMap.js"));
 const mapLoading = () => (
 	<div className="center">
 		<h2 className="subtitle">Loading...</h2>
@@ -160,16 +162,11 @@ const Birthday = () => {
 	};
 
 	const getTweets = (countryCode) => {
-		const url = "https://ssrb-query.herokuapp.com/fetch_tweets";
-		axios
-			.post(url, {
-				country: countryCode,
-			})
-			.then((db_messages) => {
-				let messages = db_messages.data;
-				setMessages(messages);
-			})
-			.catch((err) => console.log(err));
+		let numbericLocation = parseInt(iso_countries.alpha2ToNumeric(countryCode))
+		var result = tweetsData.filter(obj => {
+			return obj.location === numbericLocation
+		})
+		setMessages(result);
 	};
 
 	const handleSubmit = (e) => {

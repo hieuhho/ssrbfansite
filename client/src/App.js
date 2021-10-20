@@ -9,21 +9,18 @@ import {
 	Redirect,
 } from "react-router-dom";
 import Home from "./pages/Home";
-import Projects from "./pages/Projects";
 import Videos from "./pages/Videos";
 import About from "./pages/About";
-import Anniversary from "./pages/Anniversary";
-import Birthday from "./pages/Birthday";
 import PageNotFound from "./pages/PageNotFound";
 import UnderConstruction from "./pages/UnderConstruction";
 
-// import Fanarts from "./pages/Fanarts";
-import Taiwan from "./pages/Taiwan";
-import FanMessages from "./pages/FanMessages";
-// import Activity from "./pages/Activity";
-import Milestone from "./pages/Milestone";
-// import English from "./pages/English";
-// import Population from "./pages/Population"
+import Projects from "./pages/Projects";
+import Anniversary from "./pages/Projects/Anniversary";
+import Birthday from "./pages/Projects/Birthday";
+
+import Taiwan from "./pages/Taiwan/Taiwan";
+import FanMessages from "./pages/Taiwan/FanMessages";
+import Milestone from "./pages/Taiwan/Milestone";
 
 function App() {
 	return (
