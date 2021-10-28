@@ -24,7 +24,7 @@ const Taiwan = () => {
 			{/* FAN LETTERS */}
 			<div className="projects-container">
 				<Link className="project" to="/fan_letters">
-					<img src="https://i.imgur.com/57xwxXQ.png" alt="project_img" />
+					<img src="https://i.imgur.com/1ihszXf.png" alt="project_img" />
 					<h2 className="project-heading">Fan Letters</h2>
 					<div className="project-body">
 						<div className="project-desc">
